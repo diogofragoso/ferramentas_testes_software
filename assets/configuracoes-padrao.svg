@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" width="100%" height="100%">
+  <defs>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="920" height="460" rx="12" fill="#090E20"/>
+
+  <!-- Title -->
+  <text x="460" y="34" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Janela "Configurações de Padrão" (Pattern Settings) — Clique na miniatura da imagem no editor</text>
+
+  <!-- LEFT PANEL: SIMILARITY (Matching Preview) -->
+  <rect x="24" y="54" width="424" height="384" rx="10" fill="#111A3A" stroke="#00D2FF" stroke-width="1.5" filter="url(#shadow2)"/>
+  <!-- Tabs -->
+  <rect x="36" y="68" width="90" height="26" rx="5" fill="#18244D"/>
+  <text x="81" y="85" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#8FA0D8" text-anchor="middle">1. Arquivo</text>
+
+  <rect x="132" y="68" width="185" height="26" rx="5" fill="#00D2FF"/>
+  <text x="224" y="85" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#00131F" text-anchor="middle">2. Pré-visualização</text>
+
+  <rect x="323" y="68" width="112" height="26" rx="5" fill="#18244D"/>
+  <text x="379" y="85" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#8FA0D8" text-anchor="middle">3. Desvio do alvo</text>
+
+  <!-- Preview Box -->
+  <rect x="40" y="108" width="392" height="165" rx="6" fill="#080C1A" stroke="#2B3A72"/>
+  <text x="236" y="132" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8" text-anchor="middle">Tela Atual — Destaque de Correspondências Encontradas</text>
+
+  <!-- Matched Button in Preview -->
+  <rect x="156" y="152" width="160" height="44" rx="6" fill="#1F6FEB" stroke="#FF4444" stroke-width="2.5"/>
+  <text x="236" y="179" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Salvar Cadastro</text>
+  <rect x="276" y="138" width="54" height="18" rx="4" fill="#FF4444"/>
+  <text x="303" y="151" font-family="Consolas, monospace" font-size="10" font-weight="bold" fill="#FFFFFF" text-anchor="middle">0.96</text>
+
+  <text x="236" y="255" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#4ADE80" text-anchor="middle">✔ 1 correspondência encontrada acima de 0.70</text>
+
+  <!-- Similarity Slider -->
+  <text x="44" y="302" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF">Similaridade: 0.85</text>
+  <rect x="44" y="314" width="384" height="8" rx="4" fill="#1E2D5E"/>
+  <rect x="44" y="314" width="326" height="8" rx="4" fill="#00D2FF"/>
+  <circle cx="370" cy="318" r="9" fill="#FFFFFF" stroke="#00D2FF" stroke-width="3"/>
+  <text x="44" y="340" font-family="Consolas, monospace" font-size="10" fill="#8FA0D8">0.00 (Qualquer coisa)</text>
+  <text x="236" y="340" font-family="Consolas, monospace" font-size="10" fill="#FFBD2E" text-anchor="middle">0.70 (Padrão)</text>
+  <text x="428" y="340" font-family="Consolas, monospace" font-size="10" fill="#4ADE80" text-anchor="end">0.99 (Idêntico)</text>
+
+  <!-- Code Result -->
+  <rect x="44" y="356" width="384" height="64" rx="6" fill="#080C1A" stroke="#243263"/>
+  <text x="56" y="376" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#00D2FF">Código gerado automaticamente no editor:</text>
+  <text x="56" y="402" font-family="Consolas, monospace" font-size="12" fill="#4ADE80">Pattern("btn_salvar.png").similar(0.85)</text>
+
+  <!-- RIGHT PANEL: TARGET OFFSET -->
+  <rect x="472" y="54" width="424" height="384" rx="10" fill="#111A3A" stroke="#4ADE80" stroke-width="1.5" filter="url(#shadow2)"/>
+  <!-- Tabs -->
+  <rect x="484" y="68" width="90" height="26" rx="5" fill="#18244D"/>
+  <text x="529" y="85" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#8FA0D8" text-anchor="middle">1. Arquivo</text>
+
+  <rect x="580" y="68" width="185" height="26" rx="5" fill="#18244D"/>
+  <text x="672" y="85" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#8FA0D8" text-anchor="middle">2. Pré-visualização</text>
+
+  <rect x="771" y="68" width="112" height="26" rx="5" fill="#4ADE80"/>
+  <text x="827" y="85" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#00131F" text-anchor="middle">3. Desvio do alvo</text>
+
+  <!-- Target Offset Illustration -->
+  <rect x="488" y="108" width="392" height="165" rx="6" fill="#080C1A" stroke="#2B3A72"/>
+  <text x="684" y="130" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8" text-anchor="middle">Âncora Visual (Rótulo Fixo) ➔ Clique Deslocado para a Caixa</text>
+
+  <!-- Captured Image Container -->
+  <rect x="510" y="148" width="348" height="58" rx="6" fill="#1B2448" stroke="#00D2FF" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- Label inside capture -->
+  <text x="528" y="182" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">Nome do Aluno:</text>
+  <!-- Center (0,0) old point -->
+  <circle cx="580" cy="177" r="4" fill="#8FA0D8"/>
+  <text x="580" y="222" font-family="Consolas, monospace" font-size="10" fill="#8FA0D8" text-anchor="middle">Centro (0, 0)</text>
+
+  <!-- Input box inside capture -->
+  <rect x="646" y="159" width="196" height="36" rx="4" fill="#FFFFFF" stroke="#4ADE80" stroke-width="2"/>
+  <!-- Arrow from center to new target -->
+  <line x1="586" y1="177" x2="725" y2="177" stroke="#FFBD2E" stroke-width="2" stroke-dasharray="4,2"/>
+  <!-- New Target Crosshair -->
+  <circle cx="740" cy="177" r="9" fill="#FF3333" fill-opacity="0.25" stroke="#FF3333" stroke-width="2"/>
+  <line x1="728" y1="177" x2="752" y2="177" stroke="#FF3333" stroke-width="2"/>
+  <line x1="740" y1="165" x2="740" y2="189" stroke="#FF3333" stroke-width="2"/>
+  <text x="740" y="222" font-family="Consolas, monospace" font-size="10" font-weight="bold" fill="#FF5555" text-anchor="middle">Novo Alvo (+110, 0)</text>
+
+  <text x="684" y="255" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#FFBD2E" text-anchor="middle">💡 Evita capturar caixas brancas vazias que são todas iguais!</text>
+
+  <!-- Coordinates Display -->
+  <text x="492" y="302" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF">Desvio do alvo (Target Offset):</text>
+  <rect x="492" y="312" width="180" height="30" rx="5" fill="#18244D" stroke="#2F4388"/>
+  <text x="582" y="332" font-family="Consolas, monospace" font-size="12" font-weight="bold" fill="#4ADE80" text-anchor="middle">X: +110 px (Direita)</text>
+  <rect x="688" y="312" width="188" height="30" rx="5" fill="#18244D" stroke="#2F4388"/>
+  <text x="782" y="332" font-family="Consolas, monospace" font-size="12" font-weight="bold" fill="#E6EAFB" text-anchor="middle">Y: 0 px (Mesma altura)</text>
+
+  <!-- Code Result -->
+  <rect x="492" y="356" width="384" height="64" rx="6" fill="#080C1A" stroke="#243263"/>
+  <text x="504" y="376" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#4ADE80">Código gerado automaticamente no editor:</text>
+  <text x="504" y="402" font-family="Consolas, monospace" font-size="11.5" fill="#4ADE80">Pattern("lbl_nome.png").targetOffset(110, 0)</text>
+</svg>

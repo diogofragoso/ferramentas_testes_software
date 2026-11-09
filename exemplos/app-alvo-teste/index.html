@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Acadêmico OculiX — Ambiente de Treino de Testes (QA)</title>
+  <style>
+    :root {
+      --bg: #0b1124;
+      --card: #131d3f;
+      --border: #2b3a72;
+      --cyan: #00d2ff;
+      --green: #22c55e;
+      --red: #ef4444;
+      --amber: #f59e0b;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Inter, Roboto, Arial, sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 28px 16px;
+    }
+    header {
+      width: 100%;
+      max-width: 820px;
+      background: #0f1734;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-badge {
+      background: var(--cyan);
+      color: #00131f;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+    .brand h1 {
+      font-size: 18px;
+      color: #ffffff;
+    }
+    .status-pill {
+      background: #1a2855;
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+    main {
+      width: 100%;
+      max-width: 820px;
+    }
+    .card {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 26px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+    .card h2 {
+      font-size: 19px;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: inline-block;
+      background: #1a2754;
+      border: 1px solid #35498e;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .form-input {
+      width: 100%;
+      padding: 11px 14px;
+      font-size: 15px;
+      background: #ffffff;
+      color: #0f172a;
+      border: 2px solid #64748b;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--cyan);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .btn {
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: 800;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary {
+      background: #0284c7;
+      color: #ffffff;
+      border: 2px solid #38bdf8;
+    }
+    .btn-success {
+      background: #15803d;
+      color: #ffffff;
+      border: 2px solid #4ade80;
+    }
+    .btn-secondary {
+      background: #334155;
+      color: #f8fafc;
+      border: 2px solid #64748b;
+    }
+    .btn-danger {
+      background: #b91c1c;
+      color: #ffffff;
+      border: 2px solid #f87171;
+    }
+    .hidden {
+      display: none !important;
+    }
+    .alert-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .alert-error {
+      background: #450a0a;
+      border: 2px solid var(--red);
+      color: #fecaca;
+    }
+    .alert-loading {
+      background: #422006;
+      border: 2px solid var(--amber);
+      color: #fde68a;
+      text-align: center;
+      font-size: 15px;
+    }
+    .result-panel {
+      margin-top: 20px;
+      background: #090e20;
+      border: 2px solid var(--cyan);
+      border-radius: 10px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 180px 200px;
+      align-items: center;
+      gap: 16px;
+    }
+    .student-summary {
+      font-size: 15px;
+      color: #e2e8f0;
+    }
+    .student-summary strong {
+      color: var(--cyan);
+      display: block;
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+    .media-box {
+      background: #111a3a;
+      border: 2px solid #2b3a72;
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+    }
+    .media-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: #93c5fd;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .media-value {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 32px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+    .badge-status {
+      text-align: center;
+      padding: 16px 14px;
+      border-radius: 8px;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+    }
+    .badge-aprovado {
+      background: #052e16;
+      border: 3px solid #22c55e;
+      color: #4ade80;
+    }
+    .badge-reprovado {
+      background: #450a0a;
+      border: 3px solid #ef4444;
+      color: #f87171;
+    }
+    .cred-hint {
+      background: #0d1530;
+      border: 1px dashed #3b4f8c;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #cbd5e1;
+      margin-bottom: 18px;
+    }
+    .cred-hint code {
+      color: var(--cyan);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <span class="brand-badge">OCULIX QA</span>
+      <h1>Sistema Alvo de Treinamento — Testes de Software</h1>
+    </div>
+    <span class="status-pill" id="header-status">🔒 Sessão: Desconectado</span>
+  </header>
+
+  <main>
+    <!-- TELA 1: LOGIN -->
+    <section class="card" id="login-screen">
+      <h2>🔐 Acesso ao Portal de Avaliação</h2>
+      <p class="subtitle">Utilize esta tela para praticar comandos <code>click()</code>, <code>paste()</code> e <code>wait()</code> no OculiX IDE.</p>
+
+      <div class="cred-hint">
+        💡 <strong>Credenciais para teste:</strong> Usuário: <code>estudante_qa</code> &nbsp;|&nbsp; Senha: <code>oculix123</code>
+        <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 12px; float: right;" onclick="autoLogin()">Pular Login (Acesso Direto)</button>
+      </div>
+
+      <div class="form-group">
+        <span class="form-label">Usuário / E-mail</span>
+        <input type="text" id="login-user" class="form-input" placeholder="Digite seu usuário..." />
+      </div>
+
+      <div class="form-group">
+        <span class="form-label">Senha de Acesso</span>
+        <input type="password" id="login-pass" class="form-input" placeholder="Digite sua senha..." />
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" id="btn-login" onclick="fazerLogin()">🚀 Entrar no Sistema</button>
+        <button class="btn btn-secondary" onclick="limparLogin()">Limpar Login</button>
+      </div>
+
+      <div id="login-error" class="alert-box alert-error hidden">
+        ❌ ERRO DE AUTENTICAÇÃO: Usuário ou senha inválidos! Verifique os dados informados.
+      </div>
+    </section>
+
+    <!-- TELA 2: CALCULADORA E CADASTRO DE AVALIAÇÃO -->
+    <section class="card hidden" id="app-screen">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <h2>📊 Calculadora &amp; Cadastro de Avaliação</h2>
+        <button class="btn btn-danger" style="padding: 7px 14px; font-size: 13px;" onclick="sairSistema()">Sair</button>
+      </div>
+      <p class="subtitle">Treine <strong>Target Offset</strong> nos rótulos, sincronização com <strong>wait()</strong> e leitura de <strong>OCR</strong> na Média Final!</p>
+
+      <div class="form-group">
+        <span class="form-label">Nome Completo do Estudante</span>
+        <input type="text" id="student-name" class="form-input" placeholder="Ex: Ana Beatriz Conceição" />
+      </div>
+
+      <div class="grid-2">
+        <div class="form-group">
+          <span class="form-label">Nota Prática 1 (0 a 10)</span>
+          <input type="text" id="grade-1" class="form-input" placeholder="Ex: 8.5" />
+        </div>
+        <div class="form-group">
+          <span class="form-label">Nota Prática 2 (0 a 10)</span>
+          <input type="text" id="grade-2" class="form-input" placeholder="Ex: 9.5" />
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-success" id="btn-processar" onclick="processarAvaliacao()">⚙️ Processar Avaliação</button>
+        <button class="btn btn-secondary" id="btn-limpar" onclick="limparFormulario()">🧹 Limpar Formulário</button>
+      </div>
+
+      <!-- Spinner de sincronização (1.8 segundos) -->
+      <div id="loading-box" class="alert-box alert-loading hidden">
+        ⏳ Processando cálculo no servidor... Aguarde!
+      </div>
+
+      <!-- Mensagem de erro de validação (Caso de Teste Negativo) -->
+      <div id="calc-error" class="alert-box alert-error hidden">
+        ⚠️ DADOS INVÁLIDOS: Preencha o nome e informe notas numéricas entre 0.0 e 10.0!
+      </div>
+
+      <!-- Painel de Resultado (Oráculo Visual + OCR) -->
+      <div id="result-panel" class="result-panel hidden">
+        <div class="student-summary">
+          <strong id="res-name">Estudante</strong>
+          <span>Regra de aprovação: Média Final &ge; 7.0</span>
+        </div>
+
+        <div class="media-box">
+          <div class="media-title">MÉDIA FINAL</div>
+          <div class="media-value" id="res-average">0.0</div>
+        </div>
+
+        <div id="res-badge" class="badge-status badge-aprovado">
+          APROVADO
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function fazerLogin() {
+      const u = document.getElementById('login-user').value.trim();
+      const p = document.getElementById('login-pass').value.trim();
+      const err = document.getElementById('login-error');
+
+      if (u === 'estudante_qa' && p === 'oculix123') {
+        err.classList.add('hidden');
+        document.getElementById('login-screen').classList.add('hidden');
+        document.getElementById('app-screen').classList.remove('hidden');
+        document.getElementById('header-status').textContent = '🟢 Sessão: Conectado (estudante_qa)';
+      } else {
+        err.classList.remove('hidden');
+      }
+    }
+
+    function autoLogin() {
+      document.getElementById('login-user').value = 'estudante_qa';
+      document.getElementById('login-pass').value = 'oculix123';
+      fazerLogin();
+    }
+
+    function limparLogin() {
+      document.getElementById('login-user').value = '';
+      document.getElementById('login-pass').value = '';
+      document.getElementById('login-error').classList.add('hidden');
+    }
+
+    function sairSistema() {
+      limparFormulario();
+      limparLogin();
+      document.getElementById('app-screen').classList.add('hidden');
+      document.getElementById('login-screen').classList.remove('hidden');
+      document.getElementById('header-status').textContent = '🔒 Sessão: Desconectado';
+    }
+
+    function limparFormulario() {
+      document.getElementById('student-name').value = '';
+      document.getElementById('grade-1').value = '';
+      document.getElementById('grade-2').value = '';
+      document.getElementById('calc-error').classList.add('hidden');
+      document.getElementById('loading-box').classList.add('hidden');
+      document.getElementById('result-panel').classList.add('hidden');
+    }
+
+    function processarAvaliacao() {
+      const name = document.getElementById('student-name').value.trim();
+      const g1Str = document.getElementById('grade-1').value.trim().replace(',', '.');
+      const g2Str = document.getElementById('grade-2').value.trim().replace(',', '.');
+
+      const errBox = document.getElementById('calc-error');
+      const loadBox = document.getElementById('loading-box');
+      const resPanel = document.getElementById('result-panel');
+
+      errBox.classList.add('hidden');
+      resPanel.classList.add('hidden');
+
+      const n1 = parseFloat(g1Str);
+      const n2 = parseFloat(g2Str);
+
+      if (!name || isNaN(n1) || isNaN(n2) || n1 < 0 || n1 > 10 || n2 < 0 || n2 > 10) {
+        errBox.classList.remove('hidden');
+        return;
+      }
+
+      loadBox.classList.remove('hidden');
+
+      setTimeout(() => {
+        loadBox.classList.add('hidden');
+        const avg = ((n1 + n2) / 2).toFixed(1);
+        document.getElementById('res-name').textContent = name;
+        document.getElementById('res-average').textContent = avg;
+
+        const badge = document.getElementById('res-badge');
+        if (parseFloat(avg) >= 7.0) {
+          badge.textContent = 'APROVADO';
+          badge.className = 'badge-status badge-aprovado';
+        } else {
+          badge.textContent = 'REPROVADO';
+          badge.className = 'badge-status badge-reprovado';
+        }
+        resPanel.classList.remove('hidden');
+      }, 1800);
+    }
+  </script>
+</body>
+</html>

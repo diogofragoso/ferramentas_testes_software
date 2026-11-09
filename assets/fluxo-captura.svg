@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 250" width="100%" height="100%">
+  <rect x="0" y="0" width="920" height="250" rx="12" fill="#0A1024" stroke="#2B3A72" stroke-width="1.5"/>
+  <text x="460" y="32" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Como o OculiX Executa um Teste Visual (Ciclo Template Matching OpenCV)</text>
+
+  <!-- Step 1 -->
+  <rect x="24" y="52" width="196" height="174" rx="8" fill="#121C3D" stroke="#00D2FF" stroke-width="1.5"/>
+  <circle cx="48" cy="76" r="12" fill="#00D2FF"/>
+  <text x="48" y="81" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#00131F" text-anchor="middle">1</text>
+  <text x="70" y="80" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF">Captura do Alvo</text>
+  <rect x="52" y="100" width="140" height="42" rx="6" fill="#080C1A" stroke="#00D2FF" stroke-dasharray="4,2"/>
+  <text x="122" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#00D2FF" text-anchor="middle">📸 btn_calcular.png</text>
+  <text x="122" y="166" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8" text-anchor="middle">Você recorta o botão na</text>
+  <text x="122" y="182" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8" text-anchor="middle">tela usando o OculiX IDE.</text>
+  <text x="122" y="204" font-family="Consolas, monospace" font-size="10" fill="#4ADE80" text-anchor="middle">Salvo no pacote .sikuli</text>
+
+  <!-- Arrow 1->2 -->
+  <text x="235" y="144" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#00D2FF" text-anchor="middle">➔</text>
+
+  <!-- Step 2 -->
+  <rect x="250" y="52" width="196" height="174" rx="8" fill="#121C3D" stroke="#2B3A72" stroke-width="1.5"/>
+  <circle cx="274" cy="76" r="12" fill="#00D2FF"/>
+  <text x="274" y="81" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#00131F" text-anchor="middle">2</text>
+  <text x="296" y="80" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF">Busca OpenCV</text>
+  <rect x="278" y="100" width="140" height="42" rx="6" fill="#080C1A" stroke="#2B3A72"/>
+  <text x="348" y="125" font-family="Consolas, monospace" font-size="11" fill="#FFBD2E" text-anchor="middle">Score: 0.98 ≥ 0.70</text>
+  <text x="348" y="166" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8" text-anchor="middle">O motor OpenCV varre a</text>
+  <text x="348" y="182" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8" text-anchor="middle">tela atual procurando os</text>
+  <text x="348" y="198" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8" text-anchor="middle">mesmos pixels.</text>
+
+  <!-- Arrow 2->3 -->
+  <text x="461" y="144" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#00D2FF" text-anchor="middle">➔</text>
+
+  <!-- Step 3 -->
+  <rect x="476" y="52" width="196" height="174" rx="8" fill="#121C3D" stroke="#2B3A72" stroke-width="1.5"/>
+  <circle cx="500" cy="76" r="12" fill="#00D2FF"/>
+  <text x="500" y="81" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#00131F" text-anchor="middle">3</text>
+  <text x="522" y="80" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF">Ação Robótica</text>
+  <rect x="504" y="100" width="140" height="42" rx="6" fill="#080C1A" stroke="#2B3A72"/>
+  <text x="574" y="125" font-family="Consolas, monospace" font-size="11" fill="#00D2FF" text-anchor="middle">🖱️ click(x, y) / ⌨️</text>
+  <text x="574" y="166" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8" text-anchor="middle">O Robot move o cursor</text>
+  <text x="574" y="182" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8" text-anchor="middle">até o centro da imagem</text>
+  <text x="574" y="198" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8" text-anchor="middle">e clica ou digita.</text>
+
+  <!-- Arrow 3->4 -->
+  <text x="687" y="144" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#4ADE80" text-anchor="middle">➔</text>
+
+  <!-- Step 4 -->
+  <rect x="702" y="52" width="194" height="174" rx="8" fill="#121C3D" stroke="#4ADE80" stroke-width="1.5"/>
+  <circle cx="726" cy="76" r="12" fill="#4ADE80"/>
+  <text x="726" y="81" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#00131F" text-anchor="middle">4</text>
+  <text x="748" y="80" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#4ADE80">Oráculo (Validação)</text>
+  <rect x="729" y="100" width="140" height="42" rx="6" fill="#080C1A" stroke="#4ADE80"/>
+  <text x="799" y="125" font-family="Consolas, monospace" font-size="11" fill="#4ADE80" text-anchor="middle">✔ PASS / ❌ FAIL</text>
+  <text x="799" y="166" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8" text-anchor="middle">Verifica com exists() ou</text>
+  <text x="799" y="182" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8" text-anchor="middle">OCR se o software exibiu</text>
+  <text x="799" y="198" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8" text-anchor="middle">o resultado esperado!</text>
+</svg>

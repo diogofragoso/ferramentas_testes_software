@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 620" width="100%" height="100%">
+  <defs>
+    <filter id="drop" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect x="0" y="0" width="820" height="620" rx="12" fill="#080D1E"/>
+
+  <!-- Floating Recorder Window -->
+  <rect x="30" y="20" width="380" height="580" rx="10" fill="#101833" stroke="#00D2FF" stroke-width="1.8" filter="url(#drop)"/>
+
+  <!-- Title Bar -->
+  <rect x="30" y="20" width="380" height="32" rx="10" fill="#0A0F24"/>
+  <rect x="30" y="38" width="380" height="14" fill="#0A0F24"/>
+  <text x="46" y="41" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF">🟢 OculiX Gravador Moderno (beta)</text>
+  <text x="392" y="41" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#8FA0D8" text-anchor="end">✕</text>
+
+  <!-- Status line -->
+  <text x="46" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#3DDBA4">⬤ Pronto</text>
+  <line x1="46" y1="82" x2="394" y2="82" stroke="#243263" stroke-width="1"/>
+
+  <!-- Section 1: APLICATIVO -->
+  <text x="46" y="100" font-family="Consolas, monospace" font-size="10" font-weight="bold" fill="#8FA0D8">APLICATIVO</text>
+  <rect x="46" y="108" width="168" height="28" rx="5" fill="#1B2854" stroke="#2F4388"/>
+  <text x="130" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#E6EAFB" text-anchor="middle">🚀 Iniciar Aplicativo</text>
+  <rect x="224" y="108" width="170" height="28" rx="5" fill="#151F42" stroke="#243263"/>
+  <text x="309" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#7D8CC4" text-anchor="middle">Fechar Aplicativo</text>
+
+  <rect x="46" y="143" width="13" height="13" rx="3" fill="#00D2FF"/>
+  <text x="49" y="153" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="bold" fill="#00131F">✓</text>
+  <text x="66" y="154" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#B9C2E8">Limitar ações a este aplicativo</text>
+  <line x1="46" y1="166" x2="394" y2="166" stroke="#243263" stroke-width="1"/>
+
+  <!-- Section 2: AÇÕES DE IMAGEM -->
+  <text x="46" y="184" font-family="Consolas, monospace" font-size="10" font-weight="bold" fill="#00D2FF">AÇÕES DE IMAGEM</text>
+  <!-- Row 1 -->
+  <rect x="46" y="192" width="110" height="30" rx="5" fill="#1F3268" stroke="#00D2FF"/>
+  <text x="101" y="211" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">🖱️ Clique</text>
+  <rect x="165" y="192" width="110" height="30" rx="5" fill="#1B2854" stroke="#2F4388"/>
+  <text x="220" y="211" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#E6EAFB" text-anchor="middle">CliqueDuplo</text>
+  <rect x="284" y="192" width="110" height="30" rx="5" fill="#1B2854" stroke="#2F4388"/>
+  <text x="339" y="211" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#E6EAFB" text-anchor="middle">CliqueDireito</text>
+
+  <!-- Row 2 -->
+  <rect x="46" y="228" width="92" height="28" rx="5" fill="#1B2854" stroke="#2F4388"/>
+  <text x="92" y="246" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#E6EAFB" text-anchor="middle">Arrastar&amp;Soltar</text>
+  <rect x="144" y="228" width="80" height="28" rx="5" fill="#1B2854" stroke="#2F4388"/>
+  <text x="184" y="246" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#E6EAFB" text-anchor="middle">Deslizar</text>
+  <rect x="230" y="228" width="76" height="28" rx="5" fill="#1B2854" stroke="#2F4388"/>
+  <text x="268" y="246" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#E6EAFB" text-anchor="middle">Roda</text>
+  <rect x="312" y="228" width="82" height="28" rx="5" fill="#1B2854" stroke="#2F4388"/>
+  <text x="353" y="246" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#E6EAFB" text-anchor="middle">⏳ Espere</text>
+  <line x1="46" y1="266" x2="394" y2="266" stroke="#243263" stroke-width="1"/>
+
+  <!-- Section 3: AÇÕES DE TEXTO (OCR) -->
+  <text x="46" y="284" font-family="Consolas, monospace" font-size="10" font-weight="bold" fill="#4ADE80">AÇÕES DE TEXTO (OCR)</text>
+  <rect x="46" y="292" width="110" height="28" rx="5" fill="#1B2854" stroke="#2F4388"/>
+  <text x="101" y="310" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#E6EAFB" text-anchor="middle">🔤 T.Clique</text>
+  <rect x="165" y="292" width="110" height="28" rx="5" fill="#1B2854" stroke="#2F4388"/>
+  <text x="220" y="310" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#E6EAFB" text-anchor="middle">🔤 T.Espere</text>
+  <rect x="284" y="292" width="110" height="28" rx="5" fill="#1B2854" stroke="#2F4388"/>
+  <text x="339" y="310" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#E6EAFB" text-anchor="middle">🔤 T.Existe</text>
+  <line x1="46" y1="330" x2="394" y2="330" stroke="#243263" stroke-width="1"/>
+
+  <!-- Section 4: TECLADO -->
+  <text x="46" y="348" font-family="Consolas, monospace" font-size="10" font-weight="bold" fill="#FFBD2E">TECLADO</text>
+  <rect x="46" y="356" width="168" height="28" rx="5" fill="#1B2854" stroke="#2F4388"/>
+  <text x="130" y="374" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#E6EAFB" text-anchor="middle">⌨️ Digitar</text>
+  <rect x="224" y="356" width="170" height="28" rx="5" fill="#1B2854" stroke="#2F4388"/>
+  <text x="309" y="374" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#E6EAFB" text-anchor="middle">🎹 Combinação de teclas</text>
+  <rect x="46" y="390" width="348" height="26" rx="5" fill="#1B2854" stroke="#2F4388"/>
+  <text x="220" y="407" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#E6EAFB" text-anchor="middle">⏸️ Pausa</text>
+  <line x1="46" y1="426" x2="394" y2="426" stroke="#243263" stroke-width="1"/>
+
+  <!-- Section 5: CÓDIGO GERADO -->
+  <text x="46" y="444" font-family="Consolas, monospace" font-size="10" font-weight="bold" fill="#8FA0D8">CÓDIGO GERADO</text>
+  <rect x="46" y="452" width="348" height="90" rx="6" fill="#080C1A" stroke="#243263"/>
+  <text x="56" y="470" font-family="Consolas, monospace" font-size="11" fill="#C586C0">from</text>
+  <text x="88" y="470" font-family="Consolas, monospace" font-size="11" fill="#E6EAFB">sikuli</text>
+  <text x="134" y="470" font-family="Consolas, monospace" font-size="11" fill="#C586C0">import</text>
+  <text x="180" y="470" font-family="Consolas, monospace" font-size="11" fill="#E6EAFB">*</text>
+  <text x="56" y="490" font-family="Consolas, monospace" font-size="11" fill="#4ADE80">wait("btn_novo.png", 10).click()</text>
+  <text x="56" y="508" font-family="Consolas, monospace" font-size="11" fill="#00D2FF">type("Relatorio_Final")</text>
+  <text x="56" y="526" font-family="Consolas, monospace" font-size="11" fill="#FFBD2E">type("s", KeyModifier.CTRL)</text>
+
+  <!-- Bottom Buttons -->
+  <rect x="46" y="552" width="190" height="32" rx="6" fill="#00D2FF"/>
+  <text x="141" y="572" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="bold" fill="#00131F" text-anchor="middle">✔ Inserir e fechar</text>
+  <rect x="246" y="552" width="148" height="32" rx="6" fill="#1B2854" stroke="#2F4388"/>
+  <text x="320" y="572" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#E6EAFB" text-anchor="middle">Limpar</text>
+
+  <!-- RIGHT EXPLANATION CARDS -->
+  <!-- Card A -->
+  <rect x="440" y="55" width="350" height="105" rx="8" fill="#121C3D" stroke="#2B3A72"/>
+  <text x="456" y="80" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#00D2FF">1. Sempre no Topo (Always on Top)</text>
+  <text x="456" y="102" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" fill="#E6EAFB">Ao abrir o Gravador, a janela principal do OculiX IDE</text>
+  <text x="456" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" fill="#E6EAFB">é ocultada automaticamente para deixar a tela livre</text>
+  <text x="456" y="138" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" fill="#E6EAFB">para você interagir com o software que está testando.</text>
+
+  <!-- Card B -->
+  <rect x="440" y="175" width="350" height="120" rx="8" fill="#121C3D" stroke="#00D2FF"/>
+  <text x="456" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#3DDBA4">2. Três Fontes de Imagem Inteligentes</text>
+  <text x="456" y="222" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" fill="#E6EAFB">Ao clicar em Clique / Espere / Arrastar, você escolhe:</text>
+  <text x="466" y="242" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" fill="#FFFFFF">📸 Capturar tela (recorta na hora)</text>
+  <text x="466" y="260" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" fill="#FFFFFF">📂 Procurar arquivo... (.png do computador)</text>
+  <text x="466" y="278" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" fill="#FFFFFF">🗂️ Biblioteca de imagens (reutiliza capturas)</text>
+
+  <!-- Card C -->
+  <rect x="440" y="310" width="350" height="115" rx="8" fill="#121C3D" stroke="#2B3A72"/>
+  <text x="456" y="335" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFBD2E">3. Geração Multilíngue Automática</text>
+  <text x="456" y="357" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" fill="#E6EAFB">Gera comandos prontos com esperas seguras:</text>
+  <text x="456" y="377" font-family="Consolas, monospace" font-size="11" fill="#4ADE80">wait("nome_imagem.png", 10).click()</text>
+  <text x="456" y="397" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" fill="#B9C2E8">Suporta Python (Jython), Java e Robot Framework!</text>
+
+  <!-- Card D -->
+  <rect x="440" y="440" width="350" height="125" rx="8" fill="#121C3D" stroke="#4ADE80"/>
+  <text x="456" y="465" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#4ADE80">4. Inserir e Fechar sem Perder Nada</text>
+  <text x="456" y="487" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" fill="#E6EAFB">Ao clicar em "Inserir e fechar", o OculiX copia todas</text>
+  <text x="456" y="505" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" fill="#E6EAFB">as imagens capturadas para a pasta do seu script</text>
+  <text x="456" y="523" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" fill="#E6EAFB">(.sikuli) e adiciona as linhas no editor principal!</text>
+</svg>
