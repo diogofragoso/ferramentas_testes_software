@@ -123,7 +123,7 @@ Todos os comandos do catálogo e todas as receitas deste capítulo estão reunid
 
 **Capturas:** nomes como `"campo_nome.png"` representam imagens que você deve capturar na sua tela; no IDE elas aparecem como miniaturas. **Textos:** valores como `"Ana Silva"` são os dados a preencher. Faça um exemplo por vez, com a aplicação visível e no estado indicado na última coluna.
 
-Os atalhos usam Windows/Linux; no macOS, selecionar tudo, copiar e colar geralmente usam `Key.CMD`. Os comandos pressupõem a API disponível no editor Jython do OculiX. Se o ambiente exigir, coloque `from sikuli import *` no início do script.
+Os comandos, atalhos e caminhos desta tabela são para Windows. Os comandos pressupõem a API disponível no editor Jython do OculiX. Se o ambiente exigir, coloque `from sikuli import *` no início do script.
 
 | Categoria | O que fazer | Comando ou sequência de comandos | Preparação e resultado esperado |
 | --- | --- | --- | --- |
@@ -184,7 +184,6 @@ Os atalhos usam Windows/Linux; no macOS, selecionar tudo, copiar e colar geralme
 | Modificadores e combinações de teclas | Alt com tecla | `type(Key.F4, Key.ALT)` | Fechar janela no Windows |
 | Modificadores e combinações de teclas | Shift com Tab | `type(Key.TAB, Key.SHIFT)` | Voltar ao controle anterior |
 | Modificadores e combinações de teclas | Ctrl + Shift com letra | `type("t", KeyModifier.CTRL + KeyModifier.SHIFT)` | Reabrir aba em muitos navegadores |
-| Modificadores e combinações de teclas | Cmd com letra | `type("a", Key.CMD)` | Selecionar tudo no macOS |
 | Modificadores e combinações de teclas | Manter Shift pressionado | `keyDown(Key.SHIFT)` | Começar uma seleção |
 | Modificadores e combinações de teclas | Soltar Shift | `keyUp(Key.SHIFT)` | Terminar a seleção |
 | Modificadores e combinações de teclas | Manter Ctrl pressionado | `keyDown(Key.CTRL)` | Combinação com várias ações |
@@ -222,7 +221,6 @@ Os atalhos usam Windows/Linux; no macOS, selecionar tudo, copiar e colar geralme
 | Formulários e controles | Limpar formulário | `click("botao_limpar.png")` | Verifique os campos vazios depois |
 | <a id="arquivos"></a>**9. Arquivos, upload, download e diálogos nativos** | Escolher arquivo | `click("botao_escolher_arquivo.png")` | Abrir diálogo nativo |
 | Arquivos, upload, download e diálogos nativos | Informar caminho Windows | `paste(r"C:\Testes\comprovante.pdf")` | Campo de nome/caminho do diálogo com foco |
-| Arquivos, upload, download e diálogos nativos | Informar caminho Linux | `paste("/home/aluno/Testes/comprovante.pdf")` | Ajustar ao arquivo real |
 | Arquivos, upload, download e diálogos nativos | Confirmar escolha | `type(Key.ENTER)` | Com o caminho preenchido |
 | Arquivos, upload, download e diálogos nativos | Enviar arquivo selecionado | `click("botao_enviar_arquivo.png")` | Acionar upload da aplicação |
 | Arquivos, upload, download e diálogos nativos | Abrir Salvar como | `type("s", KeyModifier.CTRL + KeyModifier.SHIFT)` | Se o aplicativo usar esse atalho |
@@ -255,7 +253,7 @@ Os atalhos usam Windows/Linux; no macOS, selecionar tudo, copiar e colar geralme
 | <a id="aplicativos"></a>**13. Aplicativos e janelas** | Abrir Calculadora no Windows | `App.open("calc.exe")` | Exemplo local dependente do SO |
 | Aplicativos e janelas | Abrir executável por caminho | `App.open(r"C:\MeuPrograma\programa.exe")` | Ajustar ao aplicativo instalado |
 | Aplicativos e janelas | Focar por título/nome | `App.focus("Calculadora")` | Depende do nome reconhecido no ambiente |
-| Aplicativos e janelas | Alternar janela | `type(Key.TAB, Key.ALT)` | Alternância comum no Windows/Linux |
+| Aplicativos e janelas | Alternar janela | `type(Key.TAB, Key.ALT)` | Alternância comum no Windows |
 | Aplicativos e janelas | Fechar janela | `type(Key.F4, Key.ALT)` | Janela ativa no Windows |
 | Aplicativos e janelas | Fechar pelo botão capturado | `click("fechar_janela.png")` | Controle do próprio aplicativo |
 | <a id="padroes"></a>**14. Ajustes de imagem, regiões e OCR** | Exigir maior semelhança | `click(Pattern("botao.png").similar(0.90))` | Reduzir correspondência ambígua |
@@ -346,7 +344,7 @@ F1 pode abrir ajuda e F12 pode abrir ferramentas do navegador, mas isso depende 
 <details>
 <summary>6. Modificadores e combinações de teclas — orientações de uso</summary>
 
-`Key.CTRL`, `Key.SHIFT`, `Key.ALT` e `Key.CMD` representam essas teclas. Nos exemplos com múltiplos modificadores, `KeyModifier` fornece a combinação esperada pela API. Para começar, prefira `type(tecla, modificador)`, que já pressiona e solta; não deixe um `keyDown` sem seu `keyUp`.
+`Key.CTRL`, `Key.SHIFT` e `Key.ALT` representam os modificadores usados no Windows. Nos exemplos com múltiplos modificadores, `KeyModifier` fornece a combinação esperada pela API. Para começar, prefira `type(tecla, modificador)`, que já pressiona e solta; não deixe um `keyDown` sem seu `keyUp`.
 
 </details>
 

@@ -18,7 +18,7 @@ jmeter -n -t plano_api_e_carga_fullstack.jmx -l resultados_funcional.jtl -e -o r
 jmeter -n -t plano_api_e_carga_fullstack.jmx -Jfuncional=false -Jcarga=true -Jusuarios=10 -Jrampup=10 -Jduracao=60 -l resultados_carga.jtl -e -o relatorio_dashboard_carga
 ```
 
-No Windows, use o caminho completo de `jmeter.bat` se o bin não estiver no PATH; em Linux/macOS use `/caminho/apache-jmeter/bin/jmeter`. `-Jhost=localhost` e `-Jporta=8080` alteram o destino. `-Jcsv=C:/caminho/massa_estudantes.csv` remove dependência da pasta atual. Não reutilize JTL antigo: JMeter pode acrescentar amostras e misturar execuções.
+No PowerShell, use `jmeter.bat` se o diretório bin estiver no PATH. Para um caminho completo entre aspas, use o operador `&`, por exemplo: `& "C:\Ferramentas\apache-jmeter\bin\jmeter.bat" -n -t plano_api_e_carga_fullstack.jmx -l resultados.jtl`. `-Jhost=localhost` e `-Jporta=8080` alteram o destino. `-Jcsv=C:/caminho/massa_estudantes.csv` remove dependência da pasta atual. Não reutilize JTL antigo: JMeter pode acrescentar amostras e misturar execuções.
 
 ## Escolher o listener
 

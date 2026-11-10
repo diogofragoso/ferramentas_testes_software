@@ -24,8 +24,8 @@ O navegador apresenta a interface; a API aplica regras e autenticação; o banco
 
 1. Instale um JDK 17 ou 21 e confirme `java -version` no terminal.
 2. Obtenha o **binário**, não o pacote de fontes, na [página Apache](https://jmeter.apache.org/download_jmeter.cgi). Os exemplos usam o formato JMeter 5.6.3; confira os requisitos da versão baixada.
-3. Extraia o ZIP/TGZ em uma pasta com permissão de escrita.
-4. Windows: abra `bin/jmeter.bat`. Linux/macOS: execute `sh bin/jmeter.sh`. No macOS, instale também o JDK; não há requisito de Homebrew.
+3. Extraia o ZIP em uma pasta com permissão de escrita.
+4. No Windows, abra `bin/jmeter.bat` pelo Explorador de Arquivos ou pelo PowerShell.
 5. GUI serve para construir e depurar. Execute carga pelo terminal com `jmeter -n`.
 6. Em outro terminal, na raiz deste repositório: `python exemplos/app-alvo-teste/servidor_fullstack.py`. No Windows, `py -3` pode substituir `python`.
 7. Abra `http://localhost:8080` e `http://localhost:8080/api/health`.

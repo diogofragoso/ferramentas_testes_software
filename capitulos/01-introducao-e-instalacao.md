@@ -57,7 +57,7 @@ Muitas ferramentas de teste exigem que você conheça o "código por trás da te
 | :--- | :--- | :--- |
 | **Como encontra um botão?** | Pelo código interno: `By.xpath("//button[@id='btn-submit']")` | Pela **aparência visual**: `click("botao_salvar.png")` |
 | **Precisa saber HTML/DOM?** | Sim, é obrigatório inspecionar o código da página. | **Não!** Basta tirar um print do botão na tela. |
-| **Quais programas consegue testar?** | Apenas navegadores Web (ou exige drivers específicos). | **Qualquer coisa na tela:** Desktop (Windows/Linux/macOS), Web, Java, Delphi, Jogos (Canvas/WebGL), Planilhas, VNC/RDP. |
+| **Quais programas consegue testar?** | Apenas navegadores Web (ou exige drivers específicos). | **Qualquer coisa na tela:** Desktop (Windows), Web, Java, Delphi, Jogos (Canvas/WebGL), Planilhas, VNC/RDP. |
 | **Testa se o botão ficou invisível ou cortado?** | Não facilmente (o código HTML pode existir mesmo com o botão escondido). | **Sim!** Se um humano não consegue ver o botão na tela, o OculiX também apontará a falha. |
 
 > [!NOTE]
@@ -73,13 +73,12 @@ A única coisa que seu computador precisa ter é o **Java 17 ou superior** (reco
 
 ### Passo 2.1: Verificar se você já tem o Java instalado
 
-Abra o terminal do seu sistema operacional:
+Abra o PowerShell ou o Prompt de Comando no Windows:
 - **No Windows:** Pressione as teclas <kbd>⊞ Win</kbd> + <kbd>R</kbd>, digite `powershell` (ou `cmd`) e pressione <kbd>Enter</kbd>.
-- **No Linux / macOS:** Abra o aplicativo **Terminal**.
 
 Digite o comando abaixo e pressione <kbd>Enter</kbd>:
 
-```bash
+```powershell
 java -version
 ```
 
@@ -113,7 +112,7 @@ ou `java version "1.8.0_391"` (Java 8 antigo). Siga o **Passo 2.2** abaixo para 
 
 ### Passo 2.2: Como instalar o Java 21 LTS (Caso não tenha)
 
-Escolha a aba correspondente ao seu sistema operacional (clique para expandir):
+No Windows, escolha uma das duas opções abaixo:
 
 <details open>
 <summary><b>🪟 Windows (Método Rápido via Winget ou Instalador Gráfico)</b></summary>
@@ -129,31 +128,6 @@ Escolha a aba correspondente ao seu sistema operacional (clique para expandir):
 winget install EclipseAdoptium.Temurin.21.JDK
 ```
 *(Após instalar, feche e abra novamente o PowerShell para que o comando `java` seja reconhecido).*
-</details>
-
-<details>
-<summary><b>🐧 Linux (Ubuntu / Debian / Mint / Fedora)</b></summary>
-<br/>
-
-No terminal do **Ubuntu / Debian / Linux Mint**, execute:
-```bash
-sudo apt update && sudo apt install -y openjdk-21-jre
-```
-
-No **Fedora / RHEL**:
-```bash
-sudo dnf install -y java-21-openjdk
-```
-</details>
-
-<details>
-<summary><b>🍎 macOS (Intel ou Apple Silicon M1/M2/M3)</b></summary>
-<br/>
-
-Pelo instalador oficial `.pkg` em [adoptium.net](https://adoptium.net/temurin/releases/?version=21) (escolha `macOS aarch64` para Macs M1/M2/M3 ou `x64` para Intel), ou via Homebrew:
-```bash
-brew install --cask temurin@21
-```
 </details>
 
 ---
@@ -227,16 +201,6 @@ Isso acontece quando um descompactador de arquivos "rouba" a extensão `.jar` no
 > Em muitos notebooks, o Windows vem configurado com **Escala e Layout em 125% ou 150%**. Embora o OculiX 3.0+/4.0 possua suporte avançado a DPI, para garantir **100% de precisão cirúrgica** durante as aulas:
 > 1. Clique com o botão direito na Área de Trabalho do Windows ➔ **Configurações de exibição**.
 > 2. Em **Escala e layout**, verifique se está em **100% (Recomendado para testes visuais)** ou mantenha sempre a mesma escala em que você capturou as imagens!
-</details>
-
-<details>
-<summary><b>❓ 3. No macOS, aparece um aviso de permissão de Gravação de Tela / Acessibilidade.</b></summary>
-<br/>
-
-No macOS, por segurança do sistema operacional, qualquer ferramenta que tire screenshots e mova o mouse precisa de autorização:
-1. Abra **Ajustes do Sistema** ➔ **Privacidade e Segurança**.
-2. Em **Gravação da Tela** e em **Acessibilidade**, ative a permissão para o **Terminal** (ou **Java**).
-3. Reinicie o OculiX IDE.
 </details>
 
 ---

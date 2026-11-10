@@ -8,7 +8,7 @@
 
 ## 1. Upload e download em diálogos nativos
 
-Inicie o laboratório e faça login. Clique no campo de arquivo e capture o botão de seleção. No Windows/Linux, digite o caminho absoluto no diálogo Abrir e confirme; no macOS, use <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> para abrir Ir para a pasta antes de colar o caminho.
+Inicie o laboratório e faça login. Clique no campo de arquivo e capture o botão de seleção. No Windows, digite o caminho absoluto no campo Nome do arquivo do diálogo Abrir e confirme.
 
 ```python
 from sikuli import *
@@ -94,7 +94,7 @@ assert not eventos, "Mensagem de erro apareceu durante a jornada"
 
 O laboratório desenha uma barra em `<canvas>` depois do processamento. Capture a região da barra aprovada e reprovada em escala fixa, compare-a com `Pattern(...).similar(0.9)` e confira o badge e a média por OCR. Pixels comprovam aparência; a API comprova o valor numérico.
 
-No Chromium, abra DevTools com <kbd>F12</kbd> e alterne Device Toolbar com <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> (no macOS use Cmd). Esses atalhos dependem do navegador. Teste uma largura móvel e outra desktop, recapture padrões por viewport e verifique se formulário, resultado e upload continuam acessíveis; a emulação não substitui um dispositivo real.
+No Chromium, abra DevTools com <kbd>F12</kbd> e alterne Device Toolbar com <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>. Esses atalhos dependem do navegador. Teste uma largura móvel e outra desktop, recapture padrões por viewport e verifique se formulário, resultado e upload continuam acessíveis; a emulação não substitui um dispositivo real.
 
 ## Laboratório
 

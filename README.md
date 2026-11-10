@@ -2,7 +2,7 @@
 
 ![Trilhas](https://img.shields.io/badge/Trilhas-OculiX_%2B_JMeter-00aacc) ![Laboratório](https://img.shields.io/badge/Laboratório-Python_sem_dependências-4ADE80)
 
-Aprenda a verificar a interface, as regras da API e o comportamento sob carga em um mesmo projeto de treino.
+Aprenda a verificar a interface, as regras da API e o comportamento sob carga em um mesmo projeto de treino. **Ambiente das aulas: Windows.**
 
 | 🦎 OculiX IDE — Front-End / GUI | 🪶 Apache JMeter — API / Carga |
 | --- | --- |
@@ -94,7 +94,7 @@ Abra `http://localhost:8080`. Usuário `estudante_qa`, senha `oculix123`. Sem se
 [![OculiX IDE](https://img.shields.io/badge/OculiX_IDE-v3.0%2B_%2F_v4.0-00D2FF?style=for-the-badge&logo=openjdk&logoColor=white)](https://github.com/oculix-org/Oculix)
 [![Java](https://img.shields.io/badge/Pré--requisito-Java_17%2B-FF8800?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/)
 [![Nível](https://img.shields.io/badge/Nível-Iniciante_ao_Prático-4ADE80?style=for-the-badge)](#️-trilha-de-aprendizagem-capítulos)
-[![Plataforma](https://img.shields.io/badge/SO-Windows_%7C_Linux_%7C_macOS-8FA0D8?style=for-the-badge)](capitulos/01-introducao-e-instalacao.md)
+[![Plataforma](https://img.shields.io/badge/SO-Windows-8FA0D8?style=for-the-badge)](capitulos/01-introducao-e-instalacao.md)
 [![Licença](https://img.shields.io/badge/Licença-MIT-blueviolet?style=for-the-badge)](#)
 
 <br/>
@@ -121,7 +121,7 @@ O **OculiX IDE** (evolução direta e moderna do clássico *SikuliX*) é uma fer
 ### 💡 Por que este guia foi feito para você?
 - **Zero experiência prévia necessária:** Você não precisa dominar programação nem conhecer ferramentas complexas de automação.
 - **Nesta trilha, foco na Interface Gráfica (OculiX IDE):** Tudo é feito visualmente, capturando pedacinhos da tela (screenshots) e usando o novo **Gravador Moderno**.
-- **Qualquer software pode ser testado:** Funciona em aplicativos Desktop (Windows/Linux/macOS), sistemas Web, jogos em Canvas, calculadoras, planilhas e até telas remotas.
+- **Qualquer software pode ser testado:** Funciona em aplicativos Desktop (Windows), sistemas Web, jogos em Canvas, calculadoras, planilhas e até telas remotas.
 
 </td>
 </tr>
@@ -227,7 +227,7 @@ Ao longo dos capítulos, fique atento às caixas coloridas:
 
 ### 2. Teclas de Atalho Estilizadas
 Sempre que indicarmos um atalho no teclado, ele aparecerá no formato de tecla física:
-- Executar script: <kbd>Ctrl</kbd> + <kbd>R</kbd> (ou <kbd>⌘ Cmd</kbd> + <kbd>R</kbd> no macOS)
+- Executar script: <kbd>Ctrl</kbd> + <kbd>R</kbd>
 - Executar em câmera lenta: <kbd>Alt</kbd> + <kbd>Ctrl</kbd> + <kbd>R</kbd>
 - **PARADA DE EMERGÊNCIA (Abortar execução):** <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd>
 
@@ -253,16 +253,16 @@ paste("Teste concluído com sucesso!")
 
 Guarde esta tabela para consultar sempre que estiver com o OculiX IDE aberto:
 
-| Ação no OculiX IDE | Atalho Windows / Linux | Atalho macOS | Onde encontrar na Interface |
-| :--- | :---: | :---: | :--- |
-| **Novo Script** | <kbd>Ctrl</kbd> + <kbd>N</kbd> | <kbd>⌘</kbd> + <kbd>N</kbd> | Barra Lateral ➔ `Arquivo` ➔ `Novo: Script` |
-| **Abrir Script** | <kbd>Ctrl</kbd> + <kbd>O</kbd> | <kbd>⌘</kbd> + <kbd>O</kbd> | Barra Lateral ➔ `Arquivo` ➔ `Abrir: Script` |
-| **Salvar Script** | <kbd>Ctrl</kbd> + <kbd>S</kbd> | <kbd>⌘</kbd> + <kbd>S</kbd> | Barra Lateral ➔ `Arquivo` ➔ `Salvar` |
-| **Executar Script** | <kbd>Ctrl</kbd> + <kbd>R</kbd> | <kbd>⌘</kbd> + <kbd>R</kbd> | Barra Lateral ➔ `Executar` ➔ `Executar` |
-| **Executar em Câmera Lenta** | <kbd>Alt</kbd> + <kbd>Ctrl</kbd> + <kbd>R</kbd> | <kbd>⌥</kbd> + <kbd>⌘</kbd> + <kbd>R</kbd> | Barra Lateral ➔ `Executar` ➔ `Executar em câmera lenta` |
-| **Parar / Abortar Script** | <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> | <kbd>⌥</kbd> + <kbd>⇧</kbd> + <kbd>C</kbd> | Atalho global durante a execução |
-| **Captura Rápida de Tela** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>2</kbd> | <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>2</kbd> | Barra Lateral ➔ `Ferramentas` ➔ `Capturar` |
-| **Abrir Preferências** | <kbd>Ctrl</kbd> + <kbd>P</kbd> | <kbd>⌘</kbd> + <kbd>P</kbd> | Barra Lateral ➔ `Arquivo` ➔ `Preferências` |
+| Ação no OculiX IDE | Atalho Windows | Onde encontrar na Interface |
+| :--- | :---: | :--- |
+| **Novo Script** | <kbd>Ctrl</kbd> + <kbd>N</kbd> | Barra Lateral ➔ `Arquivo` ➔ `Novo: Script` |
+| **Abrir Script** | <kbd>Ctrl</kbd> + <kbd>O</kbd> | Barra Lateral ➔ `Arquivo` ➔ `Abrir: Script` |
+| **Salvar Script** | <kbd>Ctrl</kbd> + <kbd>S</kbd> | Barra Lateral ➔ `Arquivo` ➔ `Salvar` |
+| **Executar Script** | <kbd>Ctrl</kbd> + <kbd>R</kbd> | Barra Lateral ➔ `Executar` ➔ `Executar` |
+| **Executar em Câmera Lenta** | <kbd>Alt</kbd> + <kbd>Ctrl</kbd> + <kbd>R</kbd> | Barra Lateral ➔ `Executar` ➔ `Executar em câmera lenta` |
+| **Parar / Abortar Script** | <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> | Atalho global durante a execução |
+| **Captura Rápida de Tela** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>2</kbd> | Barra Lateral ➔ `Ferramentas` ➔ `Capturar` |
+| **Abrir Preferências** | <kbd>Ctrl</kbd> + <kbd>P</kbd> | Barra Lateral ➔ `Arquivo` ➔ `Preferências` |
 
 ---
 

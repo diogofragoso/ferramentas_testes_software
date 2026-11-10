@@ -92,19 +92,19 @@ Para uma lista mais ampla de ações e combinações, consulte o [tabela única 
 
 ## ⌨️ 2. Tabela Completa de Atalhos do OculiX IDE
 
-| Ação | Windows / Linux | macOS |
-| :--- | :---: | :---: |
-| **🛑 PARADA DE EMERGÊNCIA (Abortar Script)** | <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> | <kbd>⌥ Opt</kbd> + <kbd>⇧ Shift</kbd> + <kbd>C</kbd> |
-| **▶️ Executar Script Atual** | <kbd>Ctrl</kbd> + <kbd>R</kbd> | <kbd>⌘ Cmd</kbd> + <kbd>R</kbd> |
-| **🐢 Executar em Câmera Lenta (Slow Motion)** | <kbd>Alt</kbd> + <kbd>Ctrl</kbd> + <kbd>R</kbd> | <kbd>⌥ Opt</kbd> + <kbd>⌘ Cmd</kbd> + <kbd>R</kbd> |
-| **✂️ Executar Apenas Linhas Selecionadas** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> | <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>R</kbd> |
-| **📷 Captura Rápida de Imagem** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>2</kbd> | <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>2</kbd> |
-| **📄 Novo Script** | <kbd>Ctrl</kbd> + <kbd>N</kbd> | <kbd>⌘ Cmd</kbd> + <kbd>N</kbd> |
-| **📂 Abrir Script** | <kbd>Ctrl</kbd> + <kbd>O</kbd> | <kbd>⌘ Cmd</kbd> + <kbd>O</kbd> |
-| **💾 Salvar Script** | <kbd>Ctrl</kbd> + <kbd>S</kbd> | <kbd>⌘ Cmd</kbd> + <kbd>S</kbd> |
-| **📦 Exportar Pacote Compactado (`.zip`)** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> | <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>E</kbd> |
-| **⚙️ Abrir Preferências** | <kbd>Ctrl</kbd> + <kbd>P</kbd> | <kbd>⌘ Cmd</kbd> + <kbd>P</kbd> |
-| **🔄 Alternar entre Abas Abertas** | <kbd>Ctrl</kbd> + <kbd>Tab</kbd> | <kbd>⌘ Cmd</kbd> + <kbd>⇧ Shift</kbd> + <kbd>]</kbd> |
+| Ação | Windows |
+| :--- | :---: |
+| **🛑 PARADA DE EMERGÊNCIA (Abortar Script)** | <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> |
+| **▶️ Executar Script Atual** | <kbd>Ctrl</kbd> + <kbd>R</kbd> |
+| **🐢 Executar em Câmera Lenta (Slow Motion)** | <kbd>Alt</kbd> + <kbd>Ctrl</kbd> + <kbd>R</kbd> |
+| **✂️ Executar Apenas Linhas Selecionadas** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> |
+| **📷 Captura Rápida de Imagem** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>2</kbd> |
+| **📄 Novo Script** | <kbd>Ctrl</kbd> + <kbd>N</kbd> |
+| **📂 Abrir Script** | <kbd>Ctrl</kbd> + <kbd>O</kbd> |
+| **💾 Salvar Script** | <kbd>Ctrl</kbd> + <kbd>S</kbd> |
+| **📦 Exportar Pacote Compactado (`.zip`)** | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> |
+| **⚙️ Abrir Preferências** | <kbd>Ctrl</kbd> + <kbd>P</kbd> |
+| **🔄 Alternar entre Abas Abertas** | <kbd>Ctrl</kbd> + <kbd>Tab</kbd> |
 
 ---
 

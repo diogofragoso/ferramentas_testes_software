@@ -45,7 +45,7 @@ Vamos aprender a usar cada uma dessas 3 abas na prática!
 Imagine que você capturou uma imagem às pressas e ela ficou com um nome automático como `1731169042.png` ou um nome que você quer melhorar.
 
 > [!WARNING]
-> **Nunca renomeie as imagens diretamente pelo Explorador de Arquivos do Windows/Linux!**
+> **Nunca renomeie as imagens diretamente pelo Explorador de Arquivos do Windows!**
 > Se você mudar o nome do arquivo `.png` por fora do OculiX IDE, o código do script continuará procurando o nome antigo e falhará!
 
 ### Como renomear corretamente dentro do OculiX IDE:
