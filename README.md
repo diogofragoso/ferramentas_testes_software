@@ -75,6 +75,8 @@ Abra `http://localhost:8080`. Usuário `estudante_qa`, senha `oculix123`. Sem se
 
 **Módulo integrador:** [UI + API no OculiX](capitulos/12-testes-hibridos-ui-api.md) · [Projeto de carga JMeter](capitulos-jmeter/10-projeto-pratico-fullstack-e-cheat-sheet.md).
 
+**Comandos para praticar:** [Catálogo OculiX organizado em 16 categorias](capitulos/03a-catalogo-pratico-de-comandos.md), com exemplos diretos de mouse, teclado, formulários, navegador, arquivos e verificação visual.
+
 **Verificação do material:** [Resultados e limites da validação](VALIDACAO.md).
 
 ---
@@ -165,7 +167,7 @@ flowchart LR
 | :---: | :--- | :--- | :---: | :---: |
 | **01** | [**Introdução aos Testes Visuais e Instalação**](capitulos/01-introducao-e-instalacao.md) | O que é teste de GUI por imagem, instalação do Java 17+ e abertura do `oculixide.jar`. | ⏱️ 20 min | `█░░░░░░░░░ 10%` |
 | **02** | [**Conhecendo a Interface do OculiX IDE**](capitulos/02-conhecendo-a-interface-oculix-ide.md) | Tour pela Barra Lateral, Espaço de Trabalho, Editor com Miniaturas, Console e idioma **PT-BR**. | ⏱️ 25 min | `██░░░░░░░░ 20%` |
-| **03** | [**Primeiro Script e Captura de Tela**](capitulos/03-primeiro-script-e-captura-de-tela.md) | Capturas, comandos de mouse/teclado, esperas, regiões, OCR e receitas completas de login e validação com evidências. | ⏱️ 90 min | `███░░░░░░░ 30%` |
+| **03** | [**Primeiro Script e Captura de Tela**](capitulos/03-primeiro-script-e-captura-de-tela.md) | Capturas e sequências simples para clicar, preencher, apagar, usar atalhos, rolar e conferir login ou cálculo. | ⏱️ 60 min | `███░░░░░░░ 30%` |
 | **04** | [**Gravador Moderno (Sem Código)**](capitulos/04-gravador-moderno-sem-codigo.md) | Criando testes apontando e clicando com o **Gravador Moderno** (Imagem, OCR, Teclado e App). | ⏱️ 35 min | `████░░░░░░ 40%` |
 | **05** | [**Ajuste de Padrões: Similaridade e Offset**](capitulos/05-ajuste-de-padroes-similaridade-e-offset.md) | Janela **Configurações de Padrão**: calibrando a Similaridade (`0.70`–`0.99`) e a mira **Target Offset**. | ⏱️ 40 min | `█████░░░░░ 50%` |
 | **06** | [**Sincronização, Esperas e Validações**](capitulos/06-sincronizacao-esperas-e-validacoes.md) | `wait()`, `waitVanish()`, `exists()`, asserções `assert` (PASS/FAIL) e captura de evidências. | ⏱️ 40 min | `██████░░░░ 60%` |

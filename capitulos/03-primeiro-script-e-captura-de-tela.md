@@ -9,7 +9,7 @@
 # 📸 Capítulo 03: Seu Primeiro Teste Automatizado — Captura de Tela e Ações Básicas
 
 ![Progresso](https://img.shields.io/badge/Progresso-Cap._03_%2F_12_(25%25)-00D2FF?style=flat-square)
-![Tempo](https://img.shields.io/badge/Tempo_Estimado-90_min-4ADE80?style=flat-square)
+![Tempo](https://img.shields.io/badge/Tempo_Estimado-60_min-4ADE80?style=flat-square)
 ![Nível](https://img.shields.io/badge/Prática-Mão_na_Massa-FF8800?style=flat-square)
 
 </div>
@@ -24,8 +24,8 @@ Ao concluir este capítulo, você será capaz de:
 - [x] Aplicar as **4 Regras de Ouro da Captura Visual** para evitar que o teste falhe.
 - [x] Executar cliques (`click`, `doubleClick`, `rightClick`) e entrada de texto (`paste` e `type`).
 - [x] Executar testes em **Câmera Lenta** para visualizar onde o OculiX está clicando e usar o atalho de **Parada de Emergência**.
-- [x] Combinar esperas, asserções, atalhos, rolagem, regiões e capturas de evidência em testes reutilizáveis.
-- [x] Testar login inválido, aprovação, reprovação e entradas incorretas com resultados esperados explícitos.
+- [x] Montar sequências diretas de ações com capturas, atalhos, pausas e espera por uma imagem.
+- [x] Praticar preenchimento, limpeza de campos, login, cálculo e recusa de dados incorretos.
 
 ---
 
@@ -121,6 +121,8 @@ sequenceDiagram
 ---
 
 ## 5. Os Comandos Fundamentais de Ação (Mouse e Teclado)
+
+**Consulta organizada:** abra o [catálogo prático de comandos e combinações](03a-catalogo-pratico-de-comandos.md), com 16 categorias: cliques, movimentos, rolagem, texto, teclas, atalhos, navegador, formulários, arquivos, esperas, buscas, capturas, aplicativos, padrões, mensagens e sequências prontas.
 
 No OculiX IDE, escrevemos comandos em Python (Jython). Comece com as ações abaixo e depois combine-as com **esperas e validações**: clicar sem conferir o resultado ainda não demonstra que o programa está correto.
 
@@ -222,304 +224,270 @@ click("btn_entrar.png")
 
 ---
 
-## 7. Caixa de Ferramentas para Testar seus Programas
+## 7. Receitas Simples: Capturar, Clicar e Digitar
 
-Use esta seção como consulta durante os projetos. Faça primeiro os exemplos do portal; depois adapte os alvos e oráculos ao seu programa. Os capítulos seguintes aprofundam [padrões](05-ajuste-de-padroes-similaridade-e-offset.md), [sincronização](06-sincronizacao-esperas-e-validacoes.md), [OCR](07-regioes-ocr-e-teclado-avancado.md) e [depuração](08-depuracao-erros-e-boas-praticas.md).
+Cada exemplo abaixo é uma sequência de ações para escrever e executar diretamente no editor do OculiX IDE. Faça um exemplo por vez, com a aplicação aberta e visível.
 
-### 7.1. Preparação: o que precisa existir antes de executar?
+**Como ler os exemplos:** `click("campo_nome.png")` representa um clique na **captura do campo**. No seu IDE, use a ferramenta Capturar entre os parênteses: o trecho aparecerá como uma miniatura, como no exemplo da aula. Os nomes `.png` usados aqui são sugestões; você precisa capturar esses elementos na sua própria tela.
 
-1. Crie um bundle `.sikuli` por roteiro e deixe a aplicação visível.
-2. Capture **no seu computador** as imagens citadas no exemplo. Nomes como `btn_salvar.png` são sugestões de capturas, não arquivos fornecidos pelo guia.
-3. Mantenha zoom, tema, tamanho da janela e escala do SO consistentes. Capture campos vazios antes de preenchê-los.
-4. Comece cada teste em um estado conhecido: login desconectado, formulário limpo ou registro de teste preparado.
-5. No início do script, use `from sikuli import *`. O runtime padrão é **Jython 2.7**: use `u"João"` para textos Unicode, sem f-strings. Salve o código em UTF-8 e inclua `# -*- coding: utf-8 -*-` quando houver acentos.
+Comece com estas quatro ações:
 
-**Convenção dos exemplos:** cada bloco de receita é independente, salvo quando indicar uma função de apoio. Troque as imagens, credenciais e regras de negócio ao adaptar. Não cole todos os blocos em sequência: eles representam cenários diferentes.
+| Comando | O que acontece |
+| --- | --- |
+| `click("imagem.png")` | Clica no elemento que você capturou |
+| `paste("Ana")` | Cola o texto no campo que está selecionado |
+| `type(Key.ENTER)` | Aperta Enter |
+| `sleep(1)` | Espera 1 segundo antes da próxima linha |
 
-### 7.2. Qual comando resolve cada necessidade?
+Os atalhos abaixo usam **Windows/Linux**, como no exemplo da aula. No macOS, use `Key.CMD` no lugar de `Key.CTRL` nos atalhos de selecionar tudo, copiar e colar. Não é necessário detectar o sistema por código para praticar estes exemplos no seu computador.
 
-| Necessidade no programa | Comando ou recurso | Exemplo de uso |
-| --- | --- | --- |
-| Acionar um controle | `click`, `doubleClick`, `rightClick` | Salvar, abrir arquivo, menu de contexto |
-| Exibir opção de menu | `hover` | Revelar um submenu antes do clique |
-| Digitar ou colar | `type`, `paste` | Notas, nomes e teclas especiais |
-| Navegar no formulário | `Key.TAB`, `Key.ENTER`, `Key.ESC` | Próximo campo, confirmação, fechar diálogo |
-| Selecionar e substituir | `KeyModifier.CTRL` / `CMD` | Limpar valor existente antes de preencher |
-| Esperar o próximo estado | `wait(imagem, segundos)` | Aguardar resultado; falha se não aparecer |
-| Consultar presença opcional | `exists(imagem, segundos)` | Retorna Match ou None; ausência não gera FindFailed |
-| Conferir desaparecimento | `waitVanish(imagem, segundos)` | Retorna booleano; use `assert` para validar |
-| Exigir presença imediata | `find` | Localizar e obter posição/área do alvo |
-| Encontrar repetidos | `findAll` | Iterar por ícones em uma tabela visível |
-| Limitar a busca | `Region` | Procurar somente no formulário ou modal |
-| Ajustar correspondência | `Pattern().similar()` | Reduzir ambiguidades visuais |
-| Ler texto visível | `regiao.text()` | Conferir parte de um relatório por OCR |
-| Rolar e arrastar | `wheel`, `dragDrop` | Lista longa, quadro de tarefas ou slider |
-| Guardar evidência | `Screen().capture().save()` | Captura identificada por caso |
-| Definir o oráculo | `assert`, `if`, `try/except` | Comparar esperado e observado, registrar falha |
+### 7.1. Abrir o navegador e acessar um endereço
 
-`exists` não protege contra imagem ausente no bundle: o arquivo de referência ainda precisa existir. Uma screenshot mostra o que ocorreu, mas precisa de uma asserção para produzir PASS/FAIL. `wait(2)` apenas pausa; `wait("resultado.png", 10)` espera uma condição.
-
-### 7.3. Substituir texto e usar atalhos sem acumular dados
-
-**Problema:** o segundo teste cola o nome depois do valor do primeiro. **Solução:** foque, selecione tudo e substitua. O mesmo helper serve para busca, cadastro e edição.
+**Capture:** o ícone do navegador. Deixe esse ícone visível na barra de tarefas ou na área de trabalho.
 
 ```python
-# -*- coding: utf-8 -*-
-from sikuli import *
-from java.lang import System
-
-SELECIONAR = KeyModifier.CMD if System.getProperty("os.name").lower().startswith("mac") else KeyModifier.CTRL
-
-def preencher(imagem_campo, valor):
-    click(imagem_campo)
-    type("a", SELECIONAR)
-    paste(unicode(valor))
-
-preencher("campo_busca.png", u"João da Silva")
+click("icone_navegador.png")
+sleep(2)
+type("l", Key.CTRL)
+paste("http://localhost:8080")
 type(Key.ENTER)
-wait("resultado_joao.png", 10)
-assert exists("resultado_joao.png", 1), "Busca não exibiu o resultado esperado"
+sleep(2)
 ```
 
-Capture o resultado esperado do seu sistema, não apenas o cabeçalho genérico “Resultados”. Se o campo muda visualmente ao receber conteúdo, use uma âncora estável com offset (capítulo 05). Também é possível navegar com `type(Key.TAB)`, desde que a ordem de foco seja conhecida; o portal de treino processa pelo botão, não pelo Enter.
+**Linha por linha:** o clique traz o navegador para a frente; <kbd>Ctrl</kbd>+<kbd>L</kbd> seleciona a barra de endereços; `paste` informa a URL; Enter abre a página. Para abrir um ícone da área de trabalho, pode ser necessário trocar a primeira linha por `doubleClick("icone_navegador.png")`.
 
-### 7.4. Menus, rolagem limitada e arrastar e soltar
+O endereço acima exige que o servidor do laboratório esteja iniciado. Você também pode usar o endereço do programa que está desenvolvendo.
 
-Os exemplos a seguir exigem controles presentes no **seu programa**; o portal acadêmico não possui quadro de tarefas nem menu Arquivo.
+### 7.2. Apagar o conteúdo de um campo e escrever outro valor
+
+**Capture:** o campo que deseja alterar, no estado em que ele estará no início do exemplo.
 
 ```python
-from sikuli import *
+click("campo_nome.png")
+type("a", Key.CTRL)
+type(Key.BACKSPACE)
+paste("Ana Silva")
+```
 
-# Menu de contexto: confirme a opção e o resultado da ação.
-rightClick("arquivo_de_teste.png")
-wait("opcao_propriedades.png", 3)
+**Confira:** o campo deve conter somente `Ana Silva`. O clique escolhe o campo; <kbd>Ctrl</kbd>+<kbd>A</kbd> seleciona o texto; Backspace apaga; `paste` preenche novamente. Esse trecho serve para nome, busca, e-mail ou descrição.
+
+### 7.3. Preencher nome e e-mail e clicar em Enviar
+
+**Capture no seu formulário:** campo Nome, campo E-mail, botão Enviar e mensagem de confirmação. O portal acadêmico do guia não tem esse formulário; use o programa da sua atividade.
+
+```python
+click("campo_nome.png")
+paste("Ana Silva")
+click("campo_email.png")
+paste("ana.teste@example.com")
+sleep(1)
+click("botao_enviar.png")
+wait("mensagem_enviado.png", 5)
+```
+
+**Confira:** o sistema deve exibir a confirmação. `wait` procura a captura da mensagem por até 5 segundos; se ela não aparecer, a execução falha nessa linha. Capture a confirmação manualmente uma vez antes de montar o roteiro.
+
+### 7.4. Usar Tab para passar ao próximo campo
+
+**Prepare:** um formulário vazio no qual Nome e E-mail sejam campos consecutivos na ordem do teclado. Capture apenas o campo Nome e o botão Enviar.
+
+```python
+click("campo_nome.png")
+paste("Ana Silva")
+type(Key.TAB)
+paste("ana.teste@example.com")
+click("botao_enviar.png")
+wait("mensagem_enviado.png", 5)
+```
+
+**Confira:** antes de automatizar, pressione Tab manualmente para verificar onde o foco vai parar. Um botão ou outro controle entre os campos muda essa sequência. Se a ordem não for previsível, clique na captura de cada campo, como no exemplo anterior.
+
+### 7.5. Fazer login no portal de treino
+
+**Prepare:** deixe a tela de login aberta e os campos vazios. Capture os dois campos, o botão Entrar e o título da calculadora que aparece depois de entrar.
+
+```python
+click("campo_usuario.png")
+paste("estudante_qa")
+click("campo_senha.png")
+paste("oculix123")
+click("botao_entrar.png")
+wait("titulo_calculadora.png", 10)
+```
+
+**Confira:** a calculadora deve aparecer. Aqui o teste não termina no clique: ele espera a próxima tela. Use a captura do título da calculadora como resultado esperado.
+
+### 7.6. Testar uma senha incorreta
+
+**Prepare:** volte à tela de login. Capture o botão Limpar Login e a mensagem de erro, provocando uma tentativa inválida manualmente primeiro.
+
+```python
+click("botao_limpar_login.png")
+click("campo_usuario.png")
+paste("estudante_qa")
+click("campo_senha.png")
+paste("senha_errada")
+click("botao_entrar.png")
+wait("erro_autenticacao.png", 5)
+```
+
+**Confira:** deve aparecer o erro de autenticação e o programa deve permanecer no login. Neste caso, encontrar a mensagem de erro é o resultado correto do teste. Execute os exemplos de login separadamente, sempre começando na tela indicada.
+
+### 7.7. Calcular a média de um estudante
+
+**Prepare:** entre no portal. Capture Limpar Formulário, os três campos, Processar Avaliação e o badge APROVADO. Capture também a caixa de média exibindo `9.0`, depois de calcular manualmente uma vez.
+
+```python
+click("botao_limpar_formulario.png")
+click("campo_nome.png")
+paste("Ana Silva")
+click("campo_nota1.png")
+paste("8.5")
+click("campo_nota2.png")
+paste("9.5")
+click("botao_processar.png")
+wait("badge_aprovado.png", 10)
+wait("media_9_0.png", 3)
+```
+
+**Confira:** a média deve ser `9.0` e a situação APROVADO. Capture o badge completo para diferenciá-lo de REPROVADO. Na média, inclua a moldura da caixa para não confundir o resultado com algum número nos campos.
+
+Se os campos de nota forem muito parecidos, capture o placeholder que distingue cada um. O [capítulo 05](05-ajuste-de-padroes-similaridade-e-offset.md) ensina a clicar no campo usando seu rótulo como referência.
+
+### 7.8. Conferir se o programa recusa uma nota inválida
+
+**Capture:** a mensagem de dados inválidos que aparece ao tentar processar uma nota 15.
+
+```python
+click("botao_limpar_formulario.png")
+click("campo_nome.png")
+paste("Ana Silva")
+click("campo_nota1.png")
+paste("15")
+click("campo_nota2.png")
+paste("8")
+click("botao_processar.png")
+wait("erro_dados_invalidos.png", 5)
+```
+
+**Confira:** a mensagem de erro deve aparecer, sem exibir uma média calculada. A primeira linha limpa o resultado anterior, facilitando essa conferência. Para testar campo obrigatório, faça outra execução deixando Nome vazio.
+
+### 7.9. Copiar um texto de um campo para outro
+
+**Prepare:** no seu programa, escolha dois campos de texto editáveis e capture cada um. Deixe o segundo vazio.
+
+```python
+click("campo_origem.png")
+type("a", Key.CTRL)
+type("c", Key.CTRL)
+click("campo_destino.png")
+type("v", Key.CTRL)
+```
+
+**Confira:** os dois campos devem apresentar o mesmo conteúdo. Aqui <kbd>Ctrl</kbd>+<kbd>C</kbd> copia o conteúdo que já existe na tela; `paste("texto")` informa um texto escrito no script.
+
+### 7.10. Abrir um menu e escolher uma opção
+
+**Capture no seu programa:** o menu e a opção que aparece quando você passa o mouse sobre ele.
+
+```python
+hover("menu_relatorios.png")
+sleep(1)
+click("opcao_relatorio_mensal.png")
+wait("titulo_relatorio_mensal.png", 5)
+```
+
+**Confira:** o relatório mensal deve abrir. Se o menu do seu programa abrir por clique, troque `hover` por `click`.
+
+Para um menu de contexto, use a captura de um arquivo ou item de teste:
+
+```python
+rightClick("arquivo_teste.png")
+sleep(1)
 click("opcao_propriedades.png")
 wait("janela_propriedades.png", 5)
 type(Key.ESC)
-
-# Submenu revelado pelo mouse.
-hover("menu_relatorios.png")
-click(wait("opcao_relatorio_mensal.png", 3))
-wait("titulo_relatorio_mensal.png", 10)
 ```
 
-Em uma listagem longa, procure com um limite de rolagens. Isso evita um laço infinito se o item não existir:
+**Confira:** a janela de propriedades abre e Esc a fecha, se esse for o comportamento do seu aplicativo.
+
+### 7.11. Rolar uma página e clicar no botão do final
+
+**Prepare:** abra uma página longa do seu projeto. Capture uma área dentro do painel que deve rolar e o botão no final.
 
 ```python
-from sikuli import *
-
-hover("area_da_lista.png")  # coloque o ponteiro no painel que deve rolar
-for tentativa in range(6):
-    alvo = exists("item_pedido_qa.png", 1)
-    if alvo:
-        click(alvo)
-        break
-    if tentativa < 5:
-        wheel(WHEEL_DOWN, 3)
-else:
-    raise AssertionError("Pedido de teste não apareceu após 6 buscas")
-wait("detalhe_pedido_qa.png", 5)
+hover("area_da_pagina.png")
+wheel(WHEEL_DOWN, 5)
+sleep(1)
+wheel(WHEEL_DOWN, 5)
+sleep(1)
+click("botao_continuar.png")
+wait("titulo_proxima_etapa.png", 5)
 ```
 
-Para testar um quadro ou slider, capture origem, destino e o **estado posterior**:
+**Confira:** a próxima etapa deve aparecer. O número de passos de rolagem depende da página e do sistema; ajuste manualmente antes de executar. `WHEEL_UP` rola para cima. Essa receita pressupõe que o botão fique visível após as duas rolagens.
+
+### 7.12. Arrastar um item para outro lugar
+
+**Prepare:** use um quadro de tarefas ou uma atividade de arrastar e soltar. Capture o item de teste e uma área válida de destino.
 
 ```python
-from sikuli import *
-
-wait("cartao_tarefa_qa.png", 5)
-wait("coluna_concluido.png", 5)
-dragDrop("cartao_tarefa_qa.png", "coluna_concluido.png")
-wait("tarefa_qa_concluida.png", 5)
+dragDrop("cartao_tarefa.png", "area_concluido.png")
+sleep(1)
+wait("tarefa_concluida.png", 5)
 ```
 
-O destino é o centro da imagem; capture uma área válida para soltar. A imagem final precisa distinguir a tarefa concluída da mesma tarefa em outra coluna. Para quadros com cards idênticos, restrinja a busca à coluna de destino com `Region` antes de afirmar sucesso.
+**Confira:** a tarefa deve estar na coluna Concluído. A imagem final deve mostrar algo que diferencie a tarefa concluída da tarefa original, como um marcador de conclusão. Apenas reencontrar o mesmo cartão em qualquer lugar não comprova que ele foi movido.
 
-### 7.5. Regiões, repetição e OCR como apoio ao oráculo
+### 7.13. Esperar um resultado sem adivinhar o tempo
 
-Em uma tela do seu projeto com uma tabela de três registros preparados, capture um ícone único por linha. Ajuste as coordenadas à janela e conte apenas o que está visível:
+Para começar, `sleep` ajuda a enxergar as etapas:
 
 ```python
-from sikuli import *
-
-tabela = Region(100, 200, 800, 350)  # x, y, largura, altura: ajuste!
-padrao = Pattern("icone_registro.png").similar(0.90)
-wait("titulo_listagem.png", 5)
-assert tabela.exists(padrao, 3), "Nenhuma linha encontrada"
-linhas = list(tabela.findAll(padrao))
-assert len(linhas) == 3, "Esperava 3 registros visíveis; encontrei %d" % len(linhas)
-
-resumo = Region(100, 560, 800, 100)  # área de resumo: ajuste!
-texto = resumo.text()
-assert u"Total" in texto, u"Resumo sem o rótulo esperado: %s" % texto
+click("botao_salvar.png")
+sleep(2)
 ```
 
-O ícone deve ocorrer uma vez por linha e não aparecer no cabeçalho. Essa contagem não inclui registros fora da tela ou de outras páginas. OCR depende de fonte, contraste e idioma; texto aproximado não comprova sozinho que o valor numérico está correto. Veja o capítulo 07 para configurar e interpretar OCR. Não reduza a similaridade apenas para fazer um teste passar.
-
----
-
-## 🧪 Laboratório Prático 02: Login com Validação e Evidência
-
-**Objetivo:** demonstrar que uma senha inválida é recusada e que uma senha válida abre a área autenticada. Use o mesmo HTML do laboratório 01, por arquivo ou HTTP.
-
-### Prepare estas capturas
-
-| Imagem sugerida | O que capturar |
-| --- | --- |
-| `campo_usuario.png` | Campo de usuário vazio, com seu placeholder |
-| `campo_senha.png` | Campo de senha vazio |
-| `btn_entrar.png` | Entrar no Sistema |
-| `btn_limpar_login.png` | Limpar Login |
-| `erro_autenticacao.png` | Mensagem de credenciais inválidas |
-| `titulo_calculadora.png` | Título da calculadora na área autenticada |
-
-Provoque manualmente o erro para capturá-lo e, antes de executar, clique **Limpar Login**. Não capture dados transitórios ou a seta do mouse.
+Mas a pausa sozinha não confere se salvou. Quando já tiver capturado a confirmação, use:
 
 ```python
-# -*- coding: utf-8 -*-
-from sikuli import *
-import os
-import time
-
-evidencias = os.path.join(getBundlePath(), "evidencias")
-if not os.path.isdir(evidencias):
-    os.makedirs(evidencias)
-
-def evidenciar(rotulo):
-    nome = "%s_%s" % (rotulo, time.strftime("%Y%m%d_%H%M%S"))
-    caminho = Screen().capture().save(evidencias, nome)
-    print("Evidencia: " + str(caminho))
-
-try:
-    wait("btn_entrar.png", 5)
-    click("btn_limpar_login.png")
-    paste("campo_usuario.png", "estudante_qa")
-    paste("campo_senha.png", "senha_incorreta")
-    click("btn_entrar.png")
-    wait("erro_autenticacao.png", 10)
-    assert not exists("titulo_calculadora.png", 1), "Login inválido abriu a área interna"
-    evidenciar("CT01_login_recusado")
-
-    click("btn_limpar_login.png")
-    paste("campo_usuario.png", "estudante_qa")
-    paste("campo_senha.png", "oculix123")
-    click("btn_entrar.png")
-    wait("titulo_calculadora.png", 10)
-    assert not exists("erro_autenticacao.png", 1), "Erro continuou visível após login válido"
-    evidenciar("CT02_login_aceito")
-    print("PASSOU: credencial inválida recusada e credencial válida aceita")
-except Exception:
-    evidenciar("FALHA_login")
-    raise  # preserva a falha para o IDE, em vez de imprimir sucesso
+click("botao_salvar.png")
+wait("mensagem_salvo.png", 10)
 ```
 
-`wait` interrompe o cenário quando o estado esperado não aparece. `raise` mantém essa falha; capturar uma exceção e seguir sem reprovar esconderia o problema. Capturas podem conter dados da aplicação: use dados fictícios e confira a imagem antes de compartilhar.
+O segundo exemplo continua assim que a mensagem aparece, com limite de 10 segundos. Aprofunde essa diferença no [capítulo 06](06-sincronizacao-esperas-e-validacoes.md).
+
+## 8. Exercício: Monte seu Próprio Roteiro de Ações
+
+Escolha uma tela do seu programa e escreva uma sequência com **5 a 12 linhas**, usando capturas, `click`, `paste`, `type`, `sleep` e um `wait` no final.
+
+1. Escreva o que pretende fazer: por exemplo, preencher nome e e-mail e enviar.
+2. Abra a tela no estado inicial e capture os elementos.
+3. Digite uma ação por linha, na ordem em que faria manualmente.
+4. Execute em câmera lenta, sem mexer no mouse ou teclado.
+5. Confira o resultado esperado e ajuste uma linha por vez.
 
 <details>
-<summary>Gabarito e erros que este teste encontra</summary>
+<summary>Exemplo de resposta: preencher e limpar um formulário</summary>
 
-Na primeira tentativa, deve aparecer o erro de autenticação e a calculadora deve continuar ausente. Na segunda, a calculadora aparece e o erro desaparece. Um botão que não realiza login faz o `wait` falhar. Um sistema que aceita qualquer senha falha na primeira etapa. As evidências ficam na subpasta `evidencias` do bundle.
+```python
+click("campo_nome.png")
+paste("Ana Silva")
+click("campo_email.png")
+paste("ana.teste@example.com")
+sleep(1)
+click("botao_limpar.png")
+wait("campo_nome_vazio.png", 3)
+wait("campo_email_vazio.png", 3)
+```
+
+Capture os campos vazios com seus placeholders ou rótulos únicos. O teste deve terminar com os dois campos vazios. Adapte os nomes e o botão à sua aplicação.
 
 </details>
 
----
+Quando essas sequências estiverem claras, avance para [esperas e validações](06-sincronizacao-esperas-e-validacoes.md), [regiões e OCR](07-regioes-ocr-e-teclado-avancado.md) e [tratamento de erros](08-depuracao-erros-e-boas-praticas.md).
 
-## 🧪 Laboratório Prático 03: Testar Regras com uma Pequena Suíte
-
-**Objetivo:** testar aprovação, reprovação, limite e entradas inválidas. Faça login e mantenha a calculadora visível antes de iniciar. O mesmo roteiro funciona offline e com o servidor Python.
-
-### Capturas e massa de testes
-
-Capture `btn_limpar_formulario.png`, os campos vazios `campo_nome.png`, `campo_nota1.png`, `campo_nota2.png`, `btn_processar.png`, os badges completos `badge_aprovado.png` e `badge_reprovado.png`, a mensagem `erro_dados.png` e a âncora `rotulo_media_final.png` do painel de resultado.
-
-Os campos de nota são parecidos: inclua o placeholder que os diferencia ou utilize o rótulo com **Target Offset** do capítulo 05. Para obter imagens de erro e resultado, execute os casos manualmente uma vez; depois limpe o formulário.
-
-| Caso | Nome / notas | Resultado esperado |
-| --- | --- | --- |
-| CT03 | Ana, 8.5 e 9.5 | APROVADO, média 9.0 |
-| CT04 | Bruno, 4 e 5 | REPROVADO, média 4.5 |
-| CT05 | Carla, 7 e 7 | APROVADO no limite, média 7.0 |
-| CT06 | Diego, 15 e 8 | Erro de dados; resultado ausente |
-| CT07 | Nome vazio, 8 e 9 | Erro de dados; resultado ausente |
-
-```python
-# -*- coding: utf-8 -*-
-from sikuli import *
-import os
-import time
-
-destino = os.path.join(getBundlePath(), "evidencias")
-if not os.path.isdir(destino):
-    os.makedirs(destino)
-
-casos = [
-    ("CT03", u"Ana", "8.5", "9.5", "badge_aprovado.png", "9.0"),
-    ("CT04", u"Bruno", "4", "5", "badge_reprovado.png", "4.5"),
-    ("CT05", u"Carla", "7", "7", "badge_aprovado.png", "7.0"),
-    ("CT06", u"Diego", "15", "8", "erro_dados.png", None),
-    ("CT07", u"", "8", "9", "erro_dados.png", None),
-]
-falhas = []
-execucao = time.strftime("%Y%m%d_%H%M%S")
-
-for codigo, nome, n1, n2, imagem_esperada, media in casos:
-    try:
-        click("btn_limpar_formulario.png")
-        assert waitVanish("rotulo_media_final.png", 3), "Resultado anterior não foi limpo"
-        if nome:
-            paste("campo_nome.png", nome)
-        paste("campo_nota1.png", n1)
-        paste("campo_nota2.png", n2)
-        click("btn_processar.png")
-        wait(imagem_esperada, 10)
-
-        if media is None:
-            assert not exists("rotulo_media_final.png", 1), "Entrada inválida exibiu resultado"
-        else:
-            assert not exists("erro_dados.png", 1), "Cálculo válido mostrou erro"
-            # Capture previamente apenas a caixa de média de cada valor.
-            # Os três arquivos precisam existir no bundle antes de executar.
-            imagem_media = "media_" + media.replace(".", "_") + ".png"
-            assert exists(imagem_media, 3), "Média diferente da esperada: " + media
-
-        Screen().capture().save(destino, codigo + "_PASSOU_" + execucao)
-        print(codigo + " PASSOU")
-    except Exception as erro:
-        falhas.append(codigo)
-        Screen().capture().save(destino, codigo + "_FALHOU_" + execucao)
-        print(codigo + " FALHOU: " + str(erro))
-
-assert not falhas, "Casos reprovados: " + ", ".join(falhas)
-print("SUITE APROVADA: %d casos" % len(casos))
-```
-
-**Complete as imagens do oráculo:** capture `media_9_0.png`, `media_4_5.png` e `media_7_0.png` envolvendo o valor e a moldura da caixa de média, sem incluir o nome do estudante. Isso distingue a média final de números parecidos nos campos de entrada. Cada caso começa limpando a tela para não aceitar um resultado antigo.
-
-A suíte continua depois de uma falha para coletar os outros resultados e termina reprovada se qualquer caso falhar. Se a aplicação perder a sessão ou fechar, os próximos casos também podem falhar por falta de pré-condição; registre essa causa antes de atribuir um defeito diferente a cada caso. Aqui não há nova tentativa automática de cadastro, pois ela poderia duplicar uma operação.
-
-<details>
-<summary>Gabarito comentado e desafio de extensão</summary>
-
-Os cinco casos devem passar no portal fornecido. CT06 e CT07 passam **quando o programa recusa os dados**, e não quando consegue cadastrar. Para provar que as asserções detectam erros, altere temporariamente a média esperada de CT03 para 4.5: o caso deve falhar e a suíte deve terminar reprovada. Restaure em seguida.
-
-Acrescente notas 0, 10, -1, campo de nota vazio, vírgula decimal e texto `8abc`. Documente o esperado antes de executar. Teste separadamente aprovação e cálculo: um programa pode classificar corretamente e exibir uma média errada.
-
-</details>
-
-## 8. Adaptando as Receitas ao seu Projeto
-
-| Tipo de programa | Jornada de teste | Oráculos úteis |
-| --- | --- | --- |
-| Cadastro acadêmico | Preencher, salvar, consultar | Mensagem de confirmação e registro identificado na listagem |
-| Estoque | Registrar saída de 2 itens | Saldo atualizado e recusa de quantidade acima do disponível |
-| Loja virtual | Adicionar produto e alterar quantidade | Nome, quantidade, subtotal e total corretos |
-| Agenda | Criar compromisso e tentar conflito | Horário reservado e mensagem de conflito |
-| Aplicativo desktop | Abrir, editar e salvar documento | Conteúdo reaberto igual ao salvo |
-
-Para cada roteiro, escreva **pré-condição → dados → ação → resultado esperado → evidência → limpeza**. Use contas e registros de teste identificáveis. Uma mensagem “Salvo” é um oráculo inicial; para confirmar persistência, consulte ou reabra o registro. O [capítulo 12](12-testes-hibridos-ui-api.md) mostra como conferir pela API o registro criado pela interface.
-
-## 9. Referências dos Comandos
-
-Consulte a [API do OculiX](https://www.oculix.org/reference/api/), [buscas e ações de Region](https://docs.oculix.org/region/), [teclas e modificadores](https://docs.oculix.org/keys/), [capturas com Screen](https://docs.oculix.org/screen/), [configuração de Pattern](https://docs.oculix.org/pattern/) e o [runtime Jython](https://www.oculix.org/guides/jython/).
+Referências: [ações e buscas](https://docs.oculix.org/region/) e [teclas do OculiX](https://docs.oculix.org/keys/).
 
 ---
 
@@ -529,10 +497,10 @@ Consulte a [API do OculiX](https://www.oculix.org/reference/api/), [buscas e aç
 - [ ] Capturei imagens da tela usando `Ferramentas ➔ Capturar` e vi as miniaturas aparecerem no código.
 - [ ] Entendi por que devemos usar `paste()` para textos com acentos em português.
 - [ ] Executei meu primeiro teste em **Câmera Lenta** (<kbd>Alt</kbd> + <kbd>Ctrl</kbd> + <kbd>R</kbd>) e memorizei o atalho de parada <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd>.
-- [ ] Validei login inválido e válido, com resultado esperado e captura de evidência.
-- [ ] Executei a suíte de notas, incluindo aprovação, reprovação, limite e dados inválidos.
-- [ ] Provoquei uma falha de asserção para comprovar que o teste detecta um resultado incorreto.
-- [ ] Adaptei uma receita ao meu programa e documentei pré-condição, oráculo e limpeza.
+- [ ] Usei selecionar tudo, Backspace, Tab e Enter em um formulário.
+- [ ] Executei uma sequência de login ou cálculo usando minhas próprias capturas.
+- [ ] Entendi a diferença entre pausar com `sleep` e esperar uma imagem com `wait`.
+- [ ] Montei um roteiro curto para testar uma tela do meu programa.
 
 ---
 

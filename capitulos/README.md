@@ -31,6 +31,8 @@ flowchart LR
 
 Os capítulos 01–10 mantêm os caminhos originais. Continue nos capítulos 11–12 para arquivos, CSV, observadores, canvas e integração HTTP.
 
+**Material de consulta:** [Catálogo prático de comandos e combinações — 16 categorias](03a-catalogo-pratico-de-comandos.md). Use ao lado do editor para montar sequências de ações com suas capturas.
+
 **Atalhos:** [Instalação](01-introducao-e-instalacao.md) · [Gravador](04-gravador-moderno-sem-codigo.md) · [Consulta rápida](10-glossario-e-folha-de-consulta.md) · [Laboratório](../exemplos/README.md).
 
 No OculiX, capture imagens pelo editor, use `wait` em vez de pausas fixas e restrinja buscas com `Region`. O runtime padrão é Jython 2.7; o Python 3 do servidor é um processo separado.
