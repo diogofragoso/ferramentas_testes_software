@@ -1,10 +1,14 @@
+[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](../capitulos/README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md)
+
+---
+
 <div align="center">
 
-[⬅️ Anterior: Projeto Prático Completo](09-projeto-pratico-completo.md) · [🏠 Início](../README.md) · **Capítulo 10 de 10**
+[⬅️ Anterior: Projeto Prático Completo](09-projeto-pratico-completo.md) · [🏠 Início](../README.md) · **Capítulo 10 de 12**
 
 # 📋 Capítulo 10: Folha de Consulta Rápida (Cheat Sheet) e Glossário Ilustrado
 
-![Progresso](https://img.shields.io/badge/Progresso-Cap._10_%2F_10_(100%25)-4ADE80?style=flat-square)
+![Progresso](https://img.shields.io/badge/Progresso-Cap._10_%2F_12_(83%25)-4ADE80?style=flat-square)
 ![Tipo](https://img.shields.io/badge/Material-Consulta_Rápida_em_Aula-00D2FF?style=flat-square)
 
 </div>
@@ -173,9 +177,12 @@ except FindFailed as erro:
 
 <div align="center">
 
-### 🎉 Parabéns por concluir o Guia Prático do OculiX IDE!
+### 🎉 Você concluiu os fundamentos do OculiX IDE!
 
 | [⬅️ Capítulo 09: Projeto Prático Completo](09-projeto-pratico-completo.md) | [🏠 Voltar ao Início do Guia (README)](../README.md) |
 | :--- | ---: |
 
 </div>
+
+
+**Continue a trilha:** [Capítulo 11: Recursos avançados Web Full Stack](11-recursos-avancados-web-fullstack.md) → [Capítulo 12: UI + API](12-testes-hibridos-ui-api.md).

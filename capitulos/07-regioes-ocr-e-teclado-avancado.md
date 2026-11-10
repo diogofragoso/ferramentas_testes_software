@@ -1,10 +1,14 @@
+[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](../capitulos/README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md)
+
+---
+
 <div align="center">
 
-[⬅️ Anterior: Sincronização e Validações](06-sincronizacao-esperas-e-validacoes.md) · [🏠 Início](../README.md) · **Capítulo 07 de 10** · [Próximo: Depuração e Tratamento de Erros ➔](08-depuracao-erros-e-boas-praticas.md)
+[⬅️ Anterior: Sincronização e Validações](06-sincronizacao-esperas-e-validacoes.md) · [🏠 Início](../README.md) · **Capítulo 07 de 12** · [Próximo: Depuração e Tratamento de Erros ➔](08-depuracao-erros-e-boas-praticas.md)
 
 # 🔤 Capítulo 07: Regiões de Busca (ROI), Leitura de Texto por OCR e Teclado Avançado
 
-![Progresso](https://img.shields.io/badge/Progresso-Cap._07_%2F_10_(70%25)-00D2FF?style=flat-square)
+![Progresso](https://img.shields.io/badge/Progresso-Cap._07_%2F_12_(58%25)-00D2FF?style=flat-square)
 ![Tempo](https://img.shields.io/badge/Tempo_Estimado-40_min-4ADE80?style=flat-square)
 ![Nível](https://img.shields.io/badge/Técnica-Intermediário_Prático-blueviolet?style=flat-square)
 

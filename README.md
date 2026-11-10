@@ -1,3 +1,86 @@
+# 🧪 Portal de Engenharia de Testes Web Full Stack
+
+![Trilhas](https://img.shields.io/badge/Trilhas-OculiX_%2B_JMeter-00aacc) ![Laboratório](https://img.shields.io/badge/Laboratório-Python_sem_dependências-4ADE80)
+
+Aprenda a verificar a interface, as regras da API e o comportamento sob carga em um mesmo projeto de treino.
+
+| 🦎 OculiX IDE — Front-End / GUI | 🪶 Apache JMeter — API / Carga |
+| --- | --- |
+| Imagens, OCR, teclado, arquivos, canvas e E2E | REST, JWT, CSV, assertions, JDBC e desempenho |
+| **[Entrar na trilha: 12 capítulos](capitulos/README.md)** | **[Entrar na trilha: 10 capítulos](capitulos-jmeter/README.md)** |
+| [Começar com instalação](capitulos/01-introducao-e-instalacao.md) | [Começar com instalação](capitulos-jmeter/01-introducao-e-instalacao-jmeter.md) |
+
+![Arquitetura dos testes](assets/arquitetura-testes-fullstack.svg)
+
+```mermaid
+flowchart LR
+    O[OculiX: pixels e ações] --> F[Front-End HTML / React / Vue]
+    F --> A[API REST e JWT]
+    J[JMeter: HTTP e assertions] --> A
+    A --> B[Banco do projeto]
+    J -. JDBC opcional .-> B
+```
+
+No laboratório incluído, o Front-End é HTML/JavaScript e os dados ficam na memória do Python. O banco do diagrama representa a arquitetura de um projeto real; o exercício JDBC usa um banco separado.
+
+| Necessidade | Ferramenta | Evidência |
+| --- | --- | --- |
+| Botão, diálogo nativo, aparência e canvas | OculiX | Captura e assert visual |
+| Média correta, erro 400/401, CRUD | JMeter | Status e assertions JSON |
+| P95, vazão, erro sob concorrência | JMeter CLI | JTL e dashboard HTML |
+| Interface durante tráfego concorrente | Ambas | Jornada UI, consulta API e relatório |
+| Projeto integrador / TCC | Ambas | Critérios, ambiente, scripts e medições reproduzíveis |
+
+## Começar pelo laboratório
+
+```shell
+python exemplos/app-alvo-teste/servidor_fullstack.py
+```
+
+Abra `http://localhost:8080`. Usuário `estudante_qa`, senha `oculix123`. Sem servidor, o HTML ainda funciona por duplo clique para praticar testes visuais. Leia o [contrato da API e roteiro de execução](exemplos/README.md).
+
+<details>
+<summary>🦎 Índice OculiX — 12 capítulos</summary>
+
+- [01-introducao-e-instalacao](capitulos/01-introducao-e-instalacao.md)
+- [02-conhecendo-a-interface-oculix-ide](capitulos/02-conhecendo-a-interface-oculix-ide.md)
+- [03-primeiro-script-e-captura-de-tela](capitulos/03-primeiro-script-e-captura-de-tela.md)
+- [04-gravador-moderno-sem-codigo](capitulos/04-gravador-moderno-sem-codigo.md)
+- [05-ajuste-de-padroes-similaridade-e-offset](capitulos/05-ajuste-de-padroes-similaridade-e-offset.md)
+- [06-sincronizacao-esperas-e-validacoes](capitulos/06-sincronizacao-esperas-e-validacoes.md)
+- [07-regioes-ocr-e-teclado-avancado](capitulos/07-regioes-ocr-e-teclado-avancado.md)
+- [08-depuracao-erros-e-boas-praticas](capitulos/08-depuracao-erros-e-boas-praticas.md)
+- [09-projeto-pratico-completo](capitulos/09-projeto-pratico-completo.md)
+- [10-glossario-e-folha-de-consulta](capitulos/10-glossario-e-folha-de-consulta.md)
+- [11-recursos-avancados-web-fullstack](capitulos/11-recursos-avancados-web-fullstack.md)
+- [12-testes-hibridos-ui-api](capitulos/12-testes-hibridos-ui-api.md)
+
+</details>
+
+<details>
+<summary>🪶 Índice JMeter — 10 capítulos</summary>
+
+- [Introdução, instalação e métricas](capitulos-jmeter/01-introducao-e-instalacao-jmeter.md)
+- [Interface, hierarquia e escopo](capitulos-jmeter/02-conhecendo-a-interface-jmeter.md)
+- [CRUD REST passo a passo](capitulos-jmeter/03-testando-apis-rest-fullstack.md)
+- [Asserções e oráculos](capitulos-jmeter/04-assercoes-e-validacoes-de-api.md)
+- [JWT, sessões e correlação](capitulos-jmeter/05-correlacao-autenticacao-jwt-e-sessoes.md)
+- [Dados CSV, variáveis e funções](capitulos-jmeter/06-testes-orientados-a-dados-csv-e-variaveis.md)
+- [Gravador proxy e jornadas](capitulos-jmeter/07-gravador-web-proxy-e-controladores-logicos.md)
+- [Timers, JDBC, arquivos e Groovy](capitulos-jmeter/08-timers-banco-de-dados-jdbc-e-upload.md)
+- [CLI, listeners e dashboard HTML](capitulos-jmeter/09-metricas-listeners-cli-e-relatorio-html.md)
+- [Projeto integrador e folha de consulta](capitulos-jmeter/10-projeto-pratico-fullstack-e-cheat-sheet.md)
+
+</details>
+
+**Módulo integrador:** [UI + API no OculiX](capitulos/12-testes-hibridos-ui-api.md) · [Projeto de carga JMeter](capitulos-jmeter/10-projeto-pratico-fullstack-e-cheat-sheet.md).
+
+**Verificação do material:** [Resultados e limites da validação](VALIDACAO.md).
+
+---
+
+## Guia visual OculiX original
+
 <div align="center">
 
 <img src="assets/oculix-ide.png" width="420" alt="OculiX IDE Logo"/>
@@ -35,7 +118,7 @@ O **OculiX IDE** (evolução direta e moderna do clássico *SikuliX*) é uma fer
 
 ### 💡 Por que este guia foi feito para você?
 - **Zero experiência prévia necessária:** Você não precisa dominar programação nem conhecer ferramentas complexas de automação.
-- **100% focado na Interface Gráfica (OculiX IDE):** Tudo é feito visualmente, capturando pedacinhos da tela (screenshots) e usando o novo **Gravador Moderno**.
+- **Nesta trilha, foco na Interface Gráfica (OculiX IDE):** Tudo é feito visualmente, capturando pedacinhos da tela (screenshots) e usando o novo **Gravador Moderno**.
 - **Qualquer software pode ser testado:** Funciona em aplicativos Desktop (Windows/Linux/macOS), sistemas Web, jogos em Canvas, calculadoras, planilhas e até telas remotas.
 
 </td>
@@ -72,6 +155,8 @@ flowchart LR
     C7 --> C8["🛠️ Cap. 08\nErros e Depuração"]
     C8 --> C9["🏆 Cap. 09\nProjeto Completo"]
     C9 --> C10["📋 Cap. 10\nCheat Sheet"]
+    C10 --> C11["📁 Cap. 11\nRecursos Web"]
+    C11 --> C12["🔗 Cap. 12\nUI e API"]
 ```
 
 ### 📚 Índice Completo do Guia

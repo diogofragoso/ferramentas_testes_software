@@ -1,10 +1,14 @@
+[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](../capitulos/README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md)
+
+---
+
 <div align="center">
 
-[⬅️ Anterior: Depuração e Boas Práticas](08-depuracao-erros-e-boas-praticas.md) · [🏠 Início](../README.md) · **Capítulo 09 de 10** · [Próximo: Glossário e Cheat Sheet ➔](10-glossario-e-folha-de-consulta.md)
+[⬅️ Anterior: Depuração e Boas Práticas](08-depuracao-erros-e-boas-praticas.md) · [🏠 Início](../README.md) · **Capítulo 09 de 12** · [Próximo: Glossário e Cheat Sheet ➔](10-glossario-e-folha-de-consulta.md)
 
 # 🏆 Capítulo 09: Projeto Prático Completo — Construindo uma Suíte de Testes de Ponta a Ponta
 
-![Progresso](https://img.shields.io/badge/Progresso-Cap._09_%2F_10_(90%25)-00D2FF?style=flat-square)
+![Progresso](https://img.shields.io/badge/Progresso-Cap._09_%2F_12_(75%25)-00D2FF?style=flat-square)
 ![Tempo](https://img.shields.io/badge/Tempo_Estimado-60_min-4ADE80?style=flat-square)
 ![Nível](https://img.shields.io/badge/Desafio_Final-Projeto_Integrador-FF8800?style=flat-square)
 

@@ -1,10 +1,14 @@
+[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](../capitulos/README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md)
+
+---
+
 <div align="center">
 
-[🏠 Voltar ao Início](../README.md) · **Capítulo 01 de 10** · [Próximo: Conhecendo a Interface do OculiX IDE ➔](02-conhecendo-a-interface-oculix-ide.md)
+[🏠 Voltar ao Início](../README.md) · **Capítulo 01 de 12** · [Próximo: Conhecendo a Interface do OculiX IDE ➔](02-conhecendo-a-interface-oculix-ide.md)
 
 # 📦 Capítulo 01: Introdução aos Testes Visuais e Instalação do Ambiente
 
-![Progresso](https://img.shields.io/badge/Progresso-Cap._01_%2F_10_(10%25)-00D2FF?style=flat-square)
+![Progresso](https://img.shields.io/badge/Progresso-Cap._01_%2F_12_(8%25)-00D2FF?style=flat-square)
 ![Tempo](https://img.shields.io/badge/Tempo_Estimado-20_min-4ADE80?style=flat-square)
 ![Nível](https://img.shields.io/badge/Nível-Iniciante_Absoluto-blueviolet?style=flat-square)
 

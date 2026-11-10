@@ -1,10 +1,14 @@
+[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](../capitulos/README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md)
+
+---
+
 <div align="center">
 
-[⬅️ Anterior: Primeiro Script e Captura](03-primeiro-script-e-captura-de-tela.md) · [🏠 Início](../README.md) · **Capítulo 04 de 10** · [Próximo: Similaridade e Desvio do Alvo ➔](05-ajuste-de-padroes-similaridade-e-offset.md)
+[⬅️ Anterior: Primeiro Script e Captura](03-primeiro-script-e-captura-de-tela.md) · [🏠 Início](../README.md) · **Capítulo 04 de 12** · [Próximo: Similaridade e Desvio do Alvo ➔](05-ajuste-de-padroes-similaridade-e-offset.md)
 
 # 🟢 Capítulo 04: Usando o Gravador Moderno — Criando Testes Sem Digitar Código
 
-![Progresso](https://img.shields.io/badge/Progresso-Cap._04_%2F_10_(40%25)-00D2FF?style=flat-square)
+![Progresso](https://img.shields.io/badge/Progresso-Cap._04_%2F_12_(33%25)-00D2FF?style=flat-square)
 ![Tempo](https://img.shields.io/badge/Tempo_Estimado-35_min-4ADE80?style=flat-square)
 ![Nível](https://img.shields.io/badge/Destaque-Zero_Código-3DDBA4?style=flat-square)
 
@@ -25,7 +29,7 @@ Ao concluir este capítulo, você será capaz de:
 
 ## 1. O que é o Gravador Moderno do OculiX IDE?
 
-E se você pudesse montar um script de teste completo — já com esperas inteligentes de 10 segundos para a tela não travar — apenas escolhendo botões em um controle remoto flutuante?
+E se você pudesse montar um script de teste completo — já com esperas inteligentes de 12 segundos para a tela não travar — apenas escolhendo botões em um controle remoto flutuante?
 
 Essa é a função do **OculiX Gravador Moderno (beta)**! Quando você o abre:
 1. A janela grande do OculiX IDE **se esconde automaticamente** para não atrapalhar sua visão.

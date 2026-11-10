@@ -255,6 +255,10 @@
       color: var(--cyan);
       font-weight: 700;
     }
+    @media (max-width: 700px) {
+      header, .btn-row { flex-wrap: wrap; gap: 12px; }
+      .grid-2, .result-panel { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -353,16 +357,67 @@
           APROVADO
         </div>
       </div>
+      <div class="form-group">
+        <label class="form-label" for="comprovante">Comprovante (até 2 MiB)</label>
+        <input type="file" id="comprovante" class="form-input" />
+        <button class="btn btn-secondary" onclick="enviarComprovante()">Enviar comprovante</button>
+        <button class="btn btn-secondary" onclick="baixarComprovante()">Baixar comprovante</button>
+        <p id="upload-status" role="status"></p>
+      </div>
+      <canvas id="grafico" width="600" height="100" style="width:100%;max-width:600px" aria-label="Gráfico da média de 0 a 10"></canvas>
     </section>
   </main>
 
   <script>
-    function fazerLogin() {
+    const online = location.protocol === 'http:' || location.protocol === 'https:';
+    let token = null;
+    let arquivoLocal = null;
+    let downloadUrl = null;
+    let geracao = 0;
+    async function api(path, options = {}) {
+      const response = await fetch(path, {...options, headers: {
+        ...(token ? {Authorization: 'Bearer ' + token} : {}), ...options.headers
+      }});
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      return response;
+    }
+    async function enviarComprovante() {
+      const status = document.getElementById('upload-status');
+      const file = document.getElementById('comprovante').files[0];
+      if (!file || file.size > 2 * 1024 * 1024 - 1024) { status.textContent = 'Selecione um arquivo menor que 2 MiB.'; return; }
+      try {
+        if (online) {
+          const form = new FormData(); form.append('arquivo', file);
+          const data = await (await api('/api/upload-comprovante', {method:'POST', body:form})).json();
+          downloadUrl = data.download;
+        }
+        arquivoLocal = file;
+        status.textContent = 'Comprovante enviado: ' + file.name;
+      } catch (error) { status.textContent = 'Falha no envio: ' + error.message; }
+    }
+    async function baixarComprovante() {
+      if (!arquivoLocal) return;
+      try {
+        const blob = online ? await (await api(downloadUrl)).blob() : arquivoLocal;
+        const href = URL.createObjectURL(blob);
+        const a = document.createElement('a'); a.href = href; a.download = arquivoLocal.name; a.click();
+        setTimeout(() => URL.revokeObjectURL(href), 1000);
+      } catch (error) { document.getElementById('upload-status').textContent = 'Falha no download: ' + error.message; }
+    }
+    async function fazerLogin() {
       const u = document.getElementById('login-user').value.trim();
       const p = document.getElementById('login-pass').value.trim();
       const err = document.getElementById('login-error');
 
-      if (u === 'estudante_qa' && p === 'oculix123') {
+      let autenticado = u === 'estudante_qa' && p === 'oculix123';
+      if (online) {
+        try {
+          token = null;
+          const data = await (await api('/api/auth/login', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({usuario:u, senha:p})})).json();
+          token = data.token; autenticado = true;
+        } catch (error) { autenticado = false; }
+      }
+      if (autenticado) {
         err.classList.add('hidden');
         document.getElementById('login-screen').classList.add('hidden');
         document.getElementById('app-screen').classList.remove('hidden');
@@ -375,7 +430,7 @@
     function autoLogin() {
       document.getElementById('login-user').value = 'estudante_qa';
       document.getElementById('login-pass').value = 'oculix123';
-      fazerLogin();
+      return fazerLogin();
     }
 
     function limparLogin() {
@@ -385,6 +440,9 @@
     }
 
     function sairSistema() {
+      token = null; arquivoLocal = null; downloadUrl = null;
+      document.getElementById('comprovante').value = '';
+      document.getElementById('upload-status').textContent = '';
       limparFormulario();
       limparLogin();
       document.getElementById('app-screen').classList.add('hidden');
@@ -393,6 +451,9 @@
     }
 
     function limparFormulario() {
+      geracao++;
+      document.getElementById('btn-processar').disabled = false;
+      document.getElementById('grafico').getContext('2d').clearRect(0, 0, 600, 100);
       document.getElementById('student-name').value = '';
       document.getElementById('grade-1').value = '';
       document.getElementById('grade-2').value = '';
@@ -401,36 +462,47 @@
       document.getElementById('result-panel').classList.add('hidden');
     }
 
-    function processarAvaliacao() {
+    async function processarAvaliacao() {
+      const atual = ++geracao;
       const name = document.getElementById('student-name').value.trim();
       const g1Str = document.getElementById('grade-1').value.trim().replace(',', '.');
       const g2Str = document.getElementById('grade-2').value.trim().replace(',', '.');
 
       const errBox = document.getElementById('calc-error');
+      errBox.textContent = '⚠️ DADOS INVÁLIDOS: Preencha o nome e informe notas numéricas entre 0.0 e 10.0!';
       const loadBox = document.getElementById('loading-box');
       const resPanel = document.getElementById('result-panel');
 
       errBox.classList.add('hidden');
       resPanel.classList.add('hidden');
 
-      const n1 = parseFloat(g1Str);
-      const n2 = parseFloat(g2Str);
+      const n1 = Number(g1Str);
+      const n2 = Number(g2Str);
 
-      if (!name || isNaN(n1) || isNaN(n2) || n1 < 0 || n1 > 10 || n2 < 0 || n2 > 10) {
+      if (!name || !g1Str || !g2Str || !Number.isFinite(n1) || !Number.isFinite(n2) || n1 < 0 || n1 > 10 || n2 < 0 || n2 > 10) {
         errBox.classList.remove('hidden');
         return;
       }
 
       loadBox.classList.remove('hidden');
+      document.getElementById('btn-processar').disabled = true;
 
-      setTimeout(() => {
+      try {
+        let data;
+        if (online) {
+          data = await (await api('/api/avaliacoes?latencia_ms=1800', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({nome:name, nota1:n1, nota2:n2})})).json();
+        } else {
+          await new Promise(resolve => setTimeout(resolve, 1800));
+          data = {media:(n1+n2)/2, status:(n1+n2)/2 >= 7 ? 'APROVADO':'REPROVADO'};
+        }
+        if (atual !== geracao) return;
         loadBox.classList.add('hidden');
-        const avg = ((n1 + n2) / 2).toFixed(1);
+        const avg = Number(data.media).toFixed(1);
         document.getElementById('res-name').textContent = name;
         document.getElementById('res-average').textContent = avg;
 
         const badge = document.getElementById('res-badge');
-        if (parseFloat(avg) >= 7.0) {
+        if (data.status === 'APROVADO') {
           badge.textContent = 'APROVADO';
           badge.className = 'badge-status badge-aprovado';
         } else {
@@ -438,7 +510,14 @@
           badge.className = 'badge-status badge-reprovado';
         }
         resPanel.classList.remove('hidden');
-      }, 1800);
+        const ctx = document.getElementById('grafico').getContext('2d');
+        ctx.clearRect(0,0,600,100); ctx.fillStyle = '#334155'; ctx.fillRect(0,20,600,40);
+        ctx.fillStyle = data.status === 'APROVADO' ? '#22c55e' : '#ef4444'; ctx.fillRect(0,20,Number(data.media)*60,40);
+      } catch (error) {
+        if (atual === geracao) { errBox.textContent = 'Falha ao processar avaliação: ' + error.message; errBox.classList.remove('hidden'); }
+      } finally {
+        if (atual === geracao) { loadBox.classList.add('hidden'); document.getElementById('btn-processar').disabled = false; }
+      }
     }
   </script>
 </body>

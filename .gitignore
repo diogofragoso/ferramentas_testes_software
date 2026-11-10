@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+resultados*.jtl
+jmeter.log
+relatorio_dashboard*/
+.tools/

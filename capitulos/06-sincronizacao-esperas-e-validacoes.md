@@ -1,10 +1,14 @@
+[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](../capitulos/README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md)
+
+---
+
 <div align="center">
 
-[⬅️ Anterior: Similaridade e Desvio do Alvo](05-ajuste-de-padroes-similaridade-e-offset.md) · [🏠 Início](../README.md) · **Capítulo 06 de 10** · [Próximo: Regiões, OCR e Teclado ➔](07-regioes-ocr-e-teclado-avancado.md)
+[⬅️ Anterior: Similaridade e Desvio do Alvo](05-ajuste-de-padroes-similaridade-e-offset.md) · [🏠 Início](../README.md) · **Capítulo 06 de 12** · [Próximo: Regiões, OCR e Teclado ➔](07-regioes-ocr-e-teclado-avancado.md)
 
 # ⏳ Capítulo 06: Sincronização, Esperas Inteligentes e Validação de Testes (Asserções)
 
-![Progresso](https://img.shields.io/badge/Progresso-Cap._06_%2F_10_(60%25)-00D2FF?style=flat-square)
+![Progresso](https://img.shields.io/badge/Progresso-Cap._06_%2F_12_(50%25)-00D2FF?style=flat-square)
 ![Tempo](https://img.shields.io/badge/Tempo_Estimado-40_min-4ADE80?style=flat-square)
 ![Nível](https://img.shields.io/badge/Foco-Qualidade_de_Software_(QA)-4ADE80?style=flat-square)
 

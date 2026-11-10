@@ -1,10 +1,14 @@
+[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](../capitulos/README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md)
+
+---
+
 <div align="center">
 
-[⬅️ Anterior: Conhecendo a Interface](02-conhecendo-a-interface-oculix-ide.md) · [🏠 Início](../README.md) · **Capítulo 03 de 10** · [Próximo: Gravador Moderno ➔](04-gravador-moderno-sem-codigo.md)
+[⬅️ Anterior: Conhecendo a Interface](02-conhecendo-a-interface-oculix-ide.md) · [🏠 Início](../README.md) · **Capítulo 03 de 12** · [Próximo: Gravador Moderno ➔](04-gravador-moderno-sem-codigo.md)
 
 # 📸 Capítulo 03: Seu Primeiro Teste Automatizado — Captura de Tela e Ações Básicas
 
-![Progresso](https://img.shields.io/badge/Progresso-Cap._03_%2F_10_(30%25)-00D2FF?style=flat-square)
+![Progresso](https://img.shields.io/badge/Progresso-Cap._03_%2F_12_(25%25)-00D2FF?style=flat-square)
 ![Tempo](https://img.shields.io/badge/Tempo_Estimado-35_min-4ADE80?style=flat-square)
 ![Nível](https://img.shields.io/badge/Prática-Mão_na_Massa-FF8800?style=flat-square)
 

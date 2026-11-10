@@ -1,10 +1,14 @@
+[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](../capitulos/README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md)
+
+---
+
 <div align="center">
 
-[⬅️ Anterior: Regiões, OCR e Teclado](07-regioes-ocr-e-teclado-avancado.md) · [🏠 Início](../README.md) · **Capítulo 08 de 10** · [Próximo: Projeto Prático Completo ➔](09-projeto-pratico-completo.md)
+[⬅️ Anterior: Regiões, OCR e Teclado](07-regioes-ocr-e-teclado-avancado.md) · [🏠 Início](../README.md) · **Capítulo 08 de 12** · [Próximo: Projeto Prático Completo ➔](09-projeto-pratico-completo.md)
 
 # 🛠️ Capítulo 08: Tratamento de Erros (`FindFailed`), Depuração e Boas Práticas
 
-![Progresso](https://img.shields.io/badge/Progresso-Cap._08_%2F_10_(80%25)-00D2FF?style=flat-square)
+![Progresso](https://img.shields.io/badge/Progresso-Cap._08_%2F_12_(67%25)-00D2FF?style=flat-square)
 ![Tempo](https://img.shields.io/badge/Tempo_Estimado-35_min-4ADE80?style=flat-square)
 ![Nível](https://img.shields.io/badge/Habilidade-Resolução_de_Problemas-FF5F56?style=flat-square)
 

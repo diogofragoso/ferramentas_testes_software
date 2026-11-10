@@ -1,10 +1,14 @@
+[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](../capitulos/README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md)
+
+---
+
 <div align="center">
 
-[⬅️ Anterior: Introdução e Instalação](01-introducao-e-instalacao.md) · [🏠 Início](../README.md) · **Capítulo 02 de 10** · [Próximo: Primeiro Script e Captura ➔](03-primeiro-script-e-captura-de-tela.md)
+[⬅️ Anterior: Introdução e Instalação](01-introducao-e-instalacao.md) · [🏠 Início](../README.md) · **Capítulo 02 de 12** · [Próximo: Primeiro Script e Captura ➔](03-primeiro-script-e-captura-de-tela.md)
 
 # 🖥️ Capítulo 02: Conhecendo a Interface Gráfica do OculiX IDE
 
-![Progresso](https://img.shields.io/badge/Progresso-Cap._02_%2F_10_(20%25)-00D2FF?style=flat-square)
+![Progresso](https://img.shields.io/badge/Progresso-Cap._02_%2F_12_(17%25)-00D2FF?style=flat-square)
 ![Tempo](https://img.shields.io/badge/Tempo_Estimado-25_min-4ADE80?style=flat-square)
 ![Nível](https://img.shields.io/badge/Nível-Iniciante-blueviolet?style=flat-square)
 

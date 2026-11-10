@@ -1,10 +1,14 @@
+[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](../capitulos/README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md)
+
+---
+
 <div align="center">
 
-[⬅️ Anterior: Gravador Moderno](04-gravador-moderno-sem-codigo.md) · [🏠 Início](../README.md) · **Capítulo 05 de 10** · [Próximo: Sincronização e Validações ➔](06-sincronizacao-esperas-e-validacoes.md)
+[⬅️ Anterior: Gravador Moderno](04-gravador-moderno-sem-codigo.md) · [🏠 Início](../README.md) · **Capítulo 05 de 12** · [Próximo: Sincronização e Validações ➔](06-sincronizacao-esperas-e-validacoes.md)
 
 # 🎯 Capítulo 05: Ajuste de Padrões — Similaridade e Desvio do Alvo (Target Offset)
 
-![Progresso](https://img.shields.io/badge/Progresso-Cap._05_%2F_10_(50%25)-00D2FF?style=flat-square)
+![Progresso](https://img.shields.io/badge/Progresso-Cap._05_%2F_12_(42%25)-00D2FF?style=flat-square)
 ![Tempo](https://img.shields.io/badge/Tempo_Estimado-40_min-4ADE80?style=flat-square)
 ![Nível](https://img.shields.io/badge/Conceito_Chave-Precisão_Visual-FFBD2E?style=flat-square)
 
