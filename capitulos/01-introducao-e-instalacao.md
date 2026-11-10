@@ -180,6 +180,14 @@ Existem **duas formas** de abrir o OculiX IDE. Recomendamos fortemente conhecer 
 | **Método 1: Terminal (Recomendado)** | Abra o terminal na pasta onde está o arquivo e execute:<br/>`java -jar oculixide-4.0.0-windows.jar` | **Sempre que possível!** Se houver qualquer aviso do sistema operacional, você verá detalhes claros no terminal. |
 | **Método 2: Duplo Clique** | Dê um **duplo clique** com o botão esquerdo sobre o arquivo `oculixide-4.0.0-windows.jar` no Explorador de Arquivos. | Prático para o dia a dia quando o `.jar` já está associado ao Java. |
 
+Como alternativa ao duplo clique, abra o terminal na pasta do arquivo baixado e execute:
+
+```shell
+java -jar nome-do-arquivo-oculix.jar
+```
+
+Substitua `nome-do-arquivo-oculix.jar` pelo nome completo do arquivo que você baixou. Se o nome contiver espaços, coloque-o entre aspas: `java -jar "nome do arquivo oculix.jar"`.
+
 #### Passo a passo para abrir pelo Terminal no Windows:
 1. Abra a pasta onde está o arquivo `oculixide-4.0.0-windows.jar` no Explorador de Arquivos.
 2. Clique com o **botão direito** em um espaço vazio da pasta e selecione **"Abrir no Terminal"** (ou digite `cmd` na barra de endereços da pasta e aperte <kbd>Enter</kbd>).
