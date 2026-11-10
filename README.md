@@ -75,7 +75,7 @@ Abra `http://localhost:8080`. Usuário `estudante_qa`, senha `oculix123`. Sem se
 
 **Módulo integrador:** [UI + API no OculiX](capitulos/12-testes-hibridos-ui-api.md) · [Projeto de carga JMeter](capitulos-jmeter/10-projeto-pratico-fullstack-e-cheat-sheet.md).
 
-**Comandos para praticar:** [Catálogo OculiX organizado em 16 categorias](capitulos/03a-catalogo-pratico-de-comandos.md), com exemplos diretos de mouse, teclado, formulários, navegador, arquivos e verificação visual.
+**Comandos para praticar:** [Tabela única de comandos e exemplos OculiX](capitulos/03-primeiro-script-e-captura-de-tela.md#5-tabela-única-de-comandos-e-exemplos), com exemplos diretos de mouse, teclado, formulários, navegador, arquivos e verificação visual.
 
 **Verificação do material:** [Resultados e limites da validação](VALIDACAO.md).
 

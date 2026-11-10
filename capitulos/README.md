@@ -31,7 +31,7 @@ flowchart LR
 
 Os capítulos 01–10 mantêm os caminhos originais. Continue nos capítulos 11–12 para arquivos, CSV, observadores, canvas e integração HTTP.
 
-**Material de consulta:** [Catálogo prático de comandos e combinações — 16 categorias](03a-catalogo-pratico-de-comandos.md). Use ao lado do editor para montar sequências de ações com suas capturas.
+**Material de consulta:** [Tabela única de comandos e exemplos — capítulo 03](03-primeiro-script-e-captura-de-tela.md#5-tabela-única-de-comandos-e-exemplos). Use ao lado do editor para montar sequências de ações com suas capturas.
 
 **Atalhos:** [Instalação](01-introducao-e-instalacao.md) · [Gravador](04-gravador-moderno-sem-codigo.md) · [Consulta rápida](10-glossario-e-folha-de-consulta.md) · [Laboratório](../exemplos/README.md).
 

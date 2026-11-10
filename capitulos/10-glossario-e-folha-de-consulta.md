@@ -19,7 +19,7 @@
 
 Mantenha esta página aberta durante as aulas e provas práticas para consultar rapidamente a sintaxe de qualquer comando no **OculiX IDE**:
 
-Para uma lista mais ampla de ações e combinações, consulte o [catálogo prático organizado em 16 categorias](03a-catalogo-pratico-de-comandos.md), com exemplos diretos e sequências para adaptar.
+Para uma lista mais ampla de ações e combinações, consulte o [tabela única de comandos e exemplos do capítulo 03](03-primeiro-script-e-captura-de-tela.md#5-tabela-única-de-comandos-e-exemplos), com exemplos diretos e sequências para adaptar.
 
 ### 🖱️ Ações de Mouse
 
