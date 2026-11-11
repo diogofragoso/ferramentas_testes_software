@@ -1,14 +1,14 @@
 # 🧪 Portal de Engenharia de Testes Web Full Stack
 
-![Trilhas](https://img.shields.io/badge/Trilhas-OculiX_%2B_JMeter-00aacc) ![Laboratório](https://img.shields.io/badge/Laboratório-Python_sem_dependências-4ADE80)
+![Trilhas](https://img.shields.io/badge/Trilhas-OculiX_%2B_JMeter_%2B_ZAP-00aacc) ![Laboratório](https://img.shields.io/badge/Laboratório-Python_sem_dependências-4ADE80)
 
-Aprenda a verificar a interface, as regras da API e o comportamento sob carga em um mesmo projeto de treino. **Ambiente das aulas: Windows.**
+Aprenda a verificar a interface, as regras da API, o comportamento sob carga e a segurança Web em um mesmo projeto de treino. **Ambiente das aulas: Windows.**
 
-| 🦎 OculiX IDE — Front-End / GUI | 🪶 Apache JMeter — API / Carga |
-| --- | --- |
-| Imagens, OCR, teclado, arquivos, canvas e E2E | REST, JWT, CSV, assertions, JDBC e desempenho |
-| **[Entrar na trilha: 12 capítulos](capitulos/README.md)** | **[Entrar na trilha: 10 capítulos](capitulos-jmeter/README.md)** |
-| [Começar com instalação](capitulos/01-introducao-e-instalacao.md) | [Começar com instalação](capitulos-jmeter/01-introducao-e-instalacao-jmeter.md) |
+| 🦎 OculiX IDE — Front-End / GUI | 🪶 Apache JMeter — API / Carga | 🛡️ OWASP ZAP 2.17 — Segurança Web |
+| --- | --- | --- |
+| Imagens, OCR, teclado, arquivos, canvas e E2E | REST, JWT, CSV, assertions, JDBC e desempenho | Proxy HTTP, análise passiva, varredura ativa, JWT e relatórios |
+| **[Entrar na trilha: 12 capítulos](capitulos/README.md)** | **[Entrar na trilha: 10 capítulos](capitulos-jmeter/README.md)** | **[Entrar na trilha: 6 capítulos](capitulos-zap/README.md)** |
+| [Começar com instalação](capitulos/01-introducao-e-instalacao.md) | [Começar com instalação](capitulos-jmeter/01-introducao-e-instalacao-jmeter.md) | [Começar com instalação](capitulos-zap/01-introducao-instalacao-e-laboratorio.md) |
 
 ![Arquitetura dos testes](assets/arquitetura-testes-fullstack.svg)
 
@@ -17,6 +17,8 @@ flowchart LR
     O[OculiX: pixels e ações] --> F[Front-End HTML / React / Vue]
     F --> A[API REST e JWT]
     J[JMeter: HTTP e assertions] --> A
+    Z[ZAP: proxy e segurança HTTP] --> F
+    Z --> A
     A --> B[Banco do projeto]
     J -. JDBC opcional .-> B
 ```
@@ -28,6 +30,7 @@ No laboratório incluído, o Front-End é HTML/JavaScript e os dados ficam na me
 | Botão, diálogo nativo, aparência e canvas | OculiX | Captura e assert visual |
 | Média correta, erro 400/401, CRUD | JMeter | Status e assertions JSON |
 | P95, vazão, erro sob concorrência | JMeter CLI | JTL e dashboard HTML |
+| Alertas de segurança HTTP e rejeição de JWT inválido | ZAP | Mensagens HTTP, casos 200/401 e relatório HTML |
 | Interface durante tráfego concorrente | Ambas | Jornada UI, consulta API e relatório |
 | Projeto integrador / TCC | Ambas | Critérios, ambiente, scripts e medições reproduzíveis |
 
@@ -38,6 +41,8 @@ python exemplos/app-alvo-teste/servidor_fullstack.py
 ```
 
 Abra `http://localhost:8080`. Usuário `estudante_qa`, senha `oculix123`. Sem servidor, o HTML ainda funciona por duplo clique para praticar testes visuais. Leia o [contrato da API e roteiro de execução](exemplos/README.md).
+
+**Para a trilha ZAP:** execute o servidor com `--port 8081` e use `http://localhost:8081/`, deixando a porta 8080 para o proxy. Siga a [preparação do laboratório de segurança](capitulos-zap/01-introducao-instalacao-e-laboratorio.md).
 
 <details>
 <summary>🦎 Índice OculiX — 12 capítulos</summary>
@@ -73,7 +78,19 @@ Abra `http://localhost:8080`. Usuário `estudante_qa`, senha `oculix123`. Sem se
 
 </details>
 
-**Módulo integrador:** [UI + API no OculiX](capitulos/12-testes-hibridos-ui-api.md) · [Projeto de carga JMeter](capitulos-jmeter/10-projeto-pratico-fullstack-e-cheat-sheet.md).
+<details>
+<summary>🛡️ Índice OWASP ZAP 2.17 — 6 capítulos</summary>
+
+- [Introdução, instalação e laboratório](capitulos-zap/01-introducao-instalacao-e-laboratorio.md)
+- [Interface, proxy e escopo](capitulos-zap/02-interface-proxy-e-escopo.md)
+- [Exploração manual e análise passiva](capitulos-zap/03-exploracao-manual-e-analise-passiva.md)
+- [Spider e varredura ativa](capitulos-zap/04-spider-e-varredura-ativa.md)
+- [API, JWT e testes de autenticação](capitulos-zap/05-api-jwt-e-autenticacao.md)
+- [Alertas, relatório e projeto prático](capitulos-zap/06-alertas-relatorio-e-projeto-pratico.md)
+
+</details>
+
+**Módulo integrador:** [UI + API no OculiX](capitulos/12-testes-hibridos-ui-api.md) · [Projeto de carga JMeter](capitulos-jmeter/10-projeto-pratico-fullstack-e-cheat-sheet.md) · [Projeto de segurança ZAP](capitulos-zap/06-alertas-relatorio-e-projeto-pratico.md).
 
 **Comandos para praticar:** [Tabela única de comandos e exemplos OculiX](capitulos/03-primeiro-script-e-captura-de-tela.md#5-tabela-única-de-comandos-e-exemplos), com exemplos diretos de mouse, teclado, formulários, navegador, arquivos e verificação visual.
 
@@ -270,6 +287,7 @@ Guarde esta tabela para consultar sempre que estiver com o OculiX IDE aberto:
 
 ```text
 oculix_aulas/
+├── capitulos-zap/                                      # 🛡️ Trilha ZAP 2.17: menu e 6 capítulos
 ├── README.md                                           # 🏠 Página inicial e mapa do curso
 ├── assets/                                             # 🎨 Imagens, diagramas SVG e capturas do OculiX IDE
 │   ├── oculix-ide.png

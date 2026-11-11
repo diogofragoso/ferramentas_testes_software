@@ -1,4 +1,4 @@
-[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](../capitulos/README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md)
+[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](../capitulos/README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md) · [🛡️ Menu ZAP](../capitulos-zap/README.md)
 
 ---
 
@@ -15,6 +15,16 @@ python exemplos/app-alvo-teste/servidor_fullstack.py
 Windows com launcher: `py -3 exemplos/app-alvo-teste/servidor_fullstack.py`. Porta alternativa: acrescente `--port 8081`. Abra `http://localhost:8080` e use `estudante_qa` / `oculix123`. Pare com Ctrl+C. O bind é somente 127.0.0.1, para treino local.
 
 O HTML por `file://` calcula notas e simula arquivos localmente. Por HTTP, login, cálculo, upload e download passam pela API. Dados, arquivos e chave JWT desaparecem ao reiniciar. Não há banco persistente nem dependências externas. O botão Pular Login usa as mesmas credenciais pelo endpoint quando online.
+
+## Laboratório de segurança com ZAP 2.17
+
+Para evitar conflito com o proxy ZAP na porta 8080, inicie o alvo em outra porta:
+
+```powershell
+python exemplos/app-alvo-teste/servidor_fullstack.py --port 8081
+```
+
+Use `http://localhost:8081/` no navegador iniciado pelo ZAP. As credenciais e o contrato HTTP abaixo permanecem os mesmos. Siga a [trilha ZAP passo a passo](../capitulos-zap/README.md), que cobre escopo local, análise passiva, varredura ativa delimitada, testes de JWT e relatório. Use somente dados descartáveis: testes ativos podem alterar o estado do alvo.
 
 ## Contrato HTTP
 

@@ -1,4 +1,4 @@
-[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md)
+[🏠 Hub Full Stack](../README.md) · [🦎 Menu OculiX](README.md) · [🪶 Menu JMeter](../capitulos-jmeter/README.md) · [🛡️ Menu ZAP](../capitulos-zap/README.md)
 
 # 📚 Comandos e exemplos do OculiX
 
